@@ -38,9 +38,9 @@ namespace ruru_api.src.controller
          public async Task<IActionResult> SignIn(SignInRequestBody dto)
          {
              var response = await _authService.SignInAsync(dto);
-             if (response.Token == null)
+             if (!response.Succeeded)
              {
-                 return BadRequest(new { response.Message });
+                 return BadRequest(new { response.Errors });
              }
              return Ok(new {response});
          }

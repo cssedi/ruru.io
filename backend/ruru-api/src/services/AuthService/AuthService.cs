@@ -47,33 +47,23 @@ public class AuthService : IAuthService
         });
     }
 
-    public async Task<UserSignInResponseBody> SignInAsync(SignInRequestBody requestBody)
+    public async Task<Result<UserSignInResponseBody>> SignInAsync(SignInRequestBody requestBody)
     {
-        var user = await _authRepository.GetUser(requestBody.Email);
+        var signInResult = await _authRepository.SignIn(requestBody);
         
-        if (user == null)
+        if (!signInResult.Succeeded)
         {
-            return new UserSignInResponseBody()
-            {
-                Message = "This Email address is not in our system, Would you like to create a new account?"
-            };
+            return Result<UserSignInResponseBody>.Failure(signInResult.Errors);
         }
         
-        var response = await _signInManager.PasswordSignInAsync(requestBody.Email, requestBody.Password, false, false);
+        User? user = await _userManager.FindByEmailAsync(requestBody.Email);
 
-        if (!response.Succeeded)
+        return Result<UserSignInResponseBody>.Success(new UserSignInResponseBody
         {
-            return new UserSignInResponseBody()
-            {
-                Message = "This email is not registered on the system. Would you like to create a new account?",
-            };
-        }
-        return new UserSignInResponseBody()
-        {
-            Message = "User successfully signed in",
+            Message = "Sign in Successful!",
             Token = await GenerateJwtToken(user)
-        };
-        
+        });
+
     }
     
     

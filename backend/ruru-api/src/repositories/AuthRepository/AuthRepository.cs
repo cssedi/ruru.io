@@ -57,22 +57,31 @@ public class AuthRepository : IAuthRepository
         return Result<User>.Success(user);
     }
 
-    public async Task<User?> SignIn(SignInRequestBody requestBody)
+    public async Task<Result<User?>> SignIn(SignInRequestBody requestBody)
     {
-        var user = await _userManager.FindByEmailAsync(requestBody.Email);
+        var userResult = await _userManager.FindByEmailAsync(requestBody.Email);
         
-        if (user  == null)
+        if (userResult  == null)
         {
-            return null;
+            return Result<User?>.Failure("The email address is not registered on our system. Would you like to create an account?");
         }
         
-        var result = await _signInManager.CheckPasswordSignInAsync(user, requestBody.Password, false);
-        if (!result.Succeeded)
+        var signInResult = await _signInManager.CheckPasswordSignInAsync(userResult, requestBody.Password, false);
+        if (signInResult.RequiresTwoFactor)
         {
-            return null;
+            return Result<User?>.Failure("Please verify your account to continue.");
+        }
+        if (signInResult.IsLockedOut)
+        {
+            return Result<User?>.Failure("Your account is locked out.");
+        }
+
+        if (signInResult.IsNotAllowed)
+        {
+            return Result<User?>.Failure("Your account is not allowed to sign in.");
         }
             
-        return user;
+        return Result<User?>.Success(userResult);
     }
 
     public async Task<User?> GetUser(string email)
