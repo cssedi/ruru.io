@@ -7,5 +7,5 @@ namespace ruru_api.services.AuthService;
 public interface IAuthService
 {
     public Task<Result<UserSignInResponseBody>> CreateUserAsync(RegisterUserRequestBody requestBody);
-    public Task<UserSignInResponseBody> SignInAsync(SignInRequestBody requestBody);
+    public Task<Result<UserSignInResponseBody>> SignInAsync(SignInRequestBody requestBody);
 }

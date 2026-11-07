@@ -7,7 +7,7 @@ namespace ruru_api.src.repositories.AuthRepository;
 public interface IAuthRepository
 {
     public Task<Result<User>> CreateUser(RegisterUserRequestBody requestBody);
-    public Task<User?> SignIn(SignInRequestBody requestBody);
+    public Task<Result<User?>> SignIn(SignInRequestBody requestBody);
     public Task<User?> GetUser(string username);
     //public Task<User> GetUser(string username);
     //public Task<User> GetUserByEmail(string email);
