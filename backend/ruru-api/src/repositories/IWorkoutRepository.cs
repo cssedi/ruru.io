@@ -1,7 +1,7 @@
 using System;
-using ruru_api.src.DTOs.Workouts;
-using ruru_api.src.model;
-namespace ruru_api.src.repositories;
+using ruru_api.DTOs.Workouts;
+using ruru_api.model;
+namespace ruru_api.repositories;
 
 
 public interface IWorkoutRepository

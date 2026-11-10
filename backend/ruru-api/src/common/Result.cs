@@ -1,4 +1,4 @@
-namespace ruru_api.src.common;
+namespace ruru_api.common;
 
 /// <summary>
 /// The outcome of an operation: either a value (success) or a list of error messages (failure).

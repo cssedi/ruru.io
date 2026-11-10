@@ -5,9 +5,10 @@ using Microsoft.IdentityModel.Tokens;
 using ruru_api.DTOs.Auth;
 using ruru_api.services.AuthService;
 using ruru_api.services.WorkoutService;
-using ruru_api.src.model;
-using ruru_api.src.repositories;
-using ruru_api.src.repositories.AuthRepository;
+using ruru_api.data;
+using ruru_api.model;
+using ruru_api.repositories;
+using ruru_api.repositories.AuthRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 
-namespace ruru_api.src.model;
+namespace ruru_api.model;
 
 [PrimaryKey(nameof(ExerciseId), nameof(WorkoutId))]
 public class WorkoutExercise

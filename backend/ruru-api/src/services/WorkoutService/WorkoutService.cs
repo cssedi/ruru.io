@@ -1,6 +1,6 @@
-using ruru_api.src.DTOs.Workouts;
-using ruru_api.src.model;
-using ruru_api.src.repositories;
+using ruru_api.DTOs.Workouts;
+using ruru_api.model;
+using ruru_api.repositories;
 
 namespace ruru_api.services.WorkoutService;
 

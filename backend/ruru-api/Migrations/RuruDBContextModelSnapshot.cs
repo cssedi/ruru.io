@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ruru_api.src.model;
+using ruru_api.data;
+using ruru_api.model;
 
 #nullable disable
 
@@ -168,7 +169,7 @@ namespace ruru_api.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Exercise", b =>
+            modelBuilder.Entity("ruru_api.model.Exercise", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,7 +190,7 @@ namespace ruru_api.Migrations
                     b.ToTable("Exercise");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.User", b =>
+            modelBuilder.Entity("ruru_api.model.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -273,7 +274,7 @@ namespace ruru_api.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Workout", b =>
+            modelBuilder.Entity("ruru_api.model.Workout", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -296,7 +297,7 @@ namespace ruru_api.Migrations
                     b.ToTable("Workout");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.WorkoutExercise", b =>
+            modelBuilder.Entity("ruru_api.model.WorkoutExercise", b =>
                 {
                     b.Property<Guid>("ExerciseId")
                         .HasColumnType("uuid");
@@ -331,7 +332,7 @@ namespace ruru_api.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("ruru_api.src.model.User", null)
+                    b.HasOne("ruru_api.model.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -340,7 +341,7 @@ namespace ruru_api.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("ruru_api.src.model.User", null)
+                    b.HasOne("ruru_api.model.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -355,7 +356,7 @@ namespace ruru_api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ruru_api.src.model.User", null)
+                    b.HasOne("ruru_api.model.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -364,16 +365,16 @@ namespace ruru_api.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("ruru_api.src.model.User", null)
+                    b.HasOne("ruru_api.model.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Workout", b =>
+            modelBuilder.Entity("ruru_api.model.Workout", b =>
                 {
-                    b.HasOne("ruru_api.src.model.User", "User")
+                    b.HasOne("ruru_api.model.User", "User")
                         .WithMany("Workouts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -382,15 +383,15 @@ namespace ruru_api.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.WorkoutExercise", b =>
+            modelBuilder.Entity("ruru_api.model.WorkoutExercise", b =>
                 {
-                    b.HasOne("ruru_api.src.model.Exercise", "Exercise")
+                    b.HasOne("ruru_api.model.Exercise", "Exercise")
                         .WithMany("WorkoutExercise")
                         .HasForeignKey("ExerciseId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("ruru_api.src.model.Workout", "Workout")
+                    b.HasOne("ruru_api.model.Workout", "Workout")
                         .WithMany("WorkoutExercises")
                         .HasForeignKey("WorkoutId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -401,17 +402,17 @@ namespace ruru_api.Migrations
                     b.Navigation("Workout");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Exercise", b =>
+            modelBuilder.Entity("ruru_api.model.Exercise", b =>
                 {
                     b.Navigation("WorkoutExercise");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.User", b =>
+            modelBuilder.Entity("ruru_api.model.User", b =>
                 {
                     b.Navigation("Workouts");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Workout", b =>
+            modelBuilder.Entity("ruru_api.model.Workout", b =>
                 {
                     b.Navigation("WorkoutExercises");
                 });

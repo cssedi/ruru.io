@@ -1,4 +1,4 @@
-namespace ruru_api.src.model;
+namespace ruru_api.model;
 
 public class Exercise
 {

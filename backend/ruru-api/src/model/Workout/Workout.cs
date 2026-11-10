@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace ruru_api.src.model;
+namespace ruru_api.model;
 
 public class Workout
 {

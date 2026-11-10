@@ -2,9 +2,9 @@ using System.Reflection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ruru_api.src.controller;
+using ruru_api.model;
 
-namespace ruru_api.src.model
+namespace ruru_api.data
 {
     public class RuruDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid> {
         public RuruDbContext(DbContextOptions<RuruDbContext> options): base(options)

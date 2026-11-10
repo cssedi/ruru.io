@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using ruru_api.DTOs.Auth;
-using ruru_api.src.common;
-using ruru_api.src.model;
-using ruru_api.src.repositories.AuthRepository;
+using ruru_api.common;
+using ruru_api.model;
+using ruru_api.repositories.AuthRepository;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

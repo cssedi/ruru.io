@@ -1,6 +1,6 @@
 using System;
 
-namespace ruru_api.src.DTOs.Workouts;
+namespace ruru_api.DTOs.Workouts;
 
 public class CreateWorkoutRequest
 {
