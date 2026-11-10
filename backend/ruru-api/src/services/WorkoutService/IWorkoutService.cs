@@ -1,4 +1,4 @@
-using ruru_api.src.DTOs.Workouts;
+using ruru_api.DTOs.Workouts;
 
 namespace ruru_api.services.WorkoutService;
 

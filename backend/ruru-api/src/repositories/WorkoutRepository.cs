@@ -1,9 +1,10 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using ruru_api.src.DTOs.Workouts;
-using ruru_api.src.model;
+using ruru_api.DTOs.Workouts;
+using ruru_api.data;
+using ruru_api.model;
 
-namespace ruru_api.src.repositories;
+namespace ruru_api.repositories;
 
 public class WorkoutRepository : IWorkoutRepository
 {

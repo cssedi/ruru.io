@@ -1,6 +1,6 @@
 using ruru_api.DTOs.Auth;
-using ruru_api.src.common;
-using ruru_api.src.model;
+using ruru_api.common;
+using ruru_api.model;
 
 namespace ruru_api.services.AuthService;
 

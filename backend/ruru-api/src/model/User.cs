@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using ruru_api.DTOs.Auth;
 
-namespace ruru_api.src.model;
+namespace ruru_api.model;
 
 public class User : IdentityUser<Guid>
 {

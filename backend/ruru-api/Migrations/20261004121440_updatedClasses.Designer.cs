@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ruru_api.src.model;
+using ruru_api.data;
+using ruru_api.model;
 
 #nullable disable
 
@@ -25,7 +26,7 @@ namespace ruru_api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ruru_api.src.model.User", b =>
+            modelBuilder.Entity("ruru_api.model.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,7 +56,7 @@ namespace ruru_api.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Workout", b =>
+            modelBuilder.Entity("ruru_api.model.Workout", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -78,9 +79,9 @@ namespace ruru_api.Migrations
                     b.ToTable("Workout");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.Workout", b =>
+            modelBuilder.Entity("ruru_api.model.Workout", b =>
                 {
-                    b.HasOne("ruru_api.src.model.User", "User")
+                    b.HasOne("ruru_api.model.User", "User")
                         .WithMany("Workouts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -89,7 +90,7 @@ namespace ruru_api.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ruru_api.src.model.User", b =>
+            modelBuilder.Entity("ruru_api.model.User", b =>
                 {
                     b.Navigation("Workouts");
                 });

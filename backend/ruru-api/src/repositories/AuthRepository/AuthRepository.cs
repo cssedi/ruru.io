@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using ruru_api.DTOs.Auth;
 using ruru_api.services.AuthService;
-using ruru_api.src.common;
-using ruru_api.src.model;
+using ruru_api.common;
+using ruru_api.data;
+using ruru_api.model;
 
-namespace ruru_api.src.repositories.AuthRepository;
+namespace ruru_api.repositories.AuthRepository;
 
 public class AuthRepository : IAuthRepository
 {
