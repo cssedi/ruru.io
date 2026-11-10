@@ -65,7 +65,7 @@ builder.Services.AddCors(option =>
     {
         policy.AllowAnyOrigin()
                 .AllowAnyHeader()
-                .AllowAnyHeader();
+                .AllowAnyMethod();
     });
 });
 
@@ -103,8 +103,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapControllers();
+app.UseCors("OpenPolicy");
 
-app.UseCors();
+app.MapControllers();
 
 app.Run();

@@ -1,16 +1,25 @@
-# React + Vite
+# ruru web app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React frontend for ruru. See the [project README](../../README.md) for the full setup, including the API.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server; `/api` is proxied to `http://localhost:5266` |
+| `npm run build` | Typecheck, then build to `dist/` |
+| `npm run typecheck` | Typecheck only |
+| `npm run lint` | Run ESLint |
+| `npm run preview` | Serve the production build locally |
 
-## React Compiler
+## Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── App.tsx          # hash router: #/, #/login, #/signup, #/app?tab=workout|meals
+├── pages/           # Landing, Auth, Tracker
+├── components.tsx   # shared UI (Logo, ThemeToggle, ...)
+├── services/        # API calls; http.ts holds the shared fetch helper
+├── models/          # TypeScript types for API and app data
+└── data.ts          # local sample exercises/foods used by the tracker
+```
