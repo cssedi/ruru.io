@@ -1,6 +1,8 @@
 import { useActionState, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Logo, ThemeToggle, SteppedBand } from '../components'
 import { RegisterAccount, SignIn } from '../services/Auth'
+import { GetOnboardingStatus } from '../services/Onboarding'
+import { setToken } from '../services/session'
 
 export type AuthMode = 'login' | 'signup'
 
@@ -9,7 +11,7 @@ type FieldErrors = Partial<Record<FieldName, string>>
 
 // Text fields echoed back after a failed submit so React's post-action form reset
 // doesn't wipe them. Passwords are deliberately left out (they'd end up in the DOM).
-type EchoedField = 'firstName' | 'lastName' | 'email' | 'goal'
+type EchoedField = 'firstName' | 'lastName' | 'email'
 
 interface AuthState {
   errors: FieldErrors
@@ -18,7 +20,6 @@ interface AuthState {
 }
 
 const INITIAL_STATE: AuthState = { errors: {}, formError: null, values: {} }
-const GOALS = ['Build muscle', 'Lose fat', 'Maintain']
 
 interface AuthCopy {
   greet: string
@@ -48,7 +49,7 @@ const COPY: Record<AuthMode, AuthCopy> = {
   },
 }
 
-const field = (data: FormData, name: FieldName | 'goal'): string => String(data.get(name) ?? '').trim()
+const field = (data: FormData, name: FieldName): string => String(data.get(name) ?? '').trim()
 
 function validate(mode: AuthMode, data: FormData): FieldErrors {
   const next: FieldErrors = {}
@@ -69,7 +70,6 @@ async function authAction(mode: AuthMode, _prev: AuthState, data: FormData): Pro
     firstName: field(data, 'firstName'),
     lastName: field(data, 'lastName'),
     email: field(data, 'email'),
-    goal: field(data, 'goal'),
   }
 
   const errors = validate(mode, data)
@@ -79,24 +79,35 @@ async function authAction(mode: AuthMode, _prev: AuthState, data: FormData): Pro
   const password = String(data.get('password') ?? '')
 
   try {
-    if (mode === 'login') {
-      const resp = await SignIn({ email, password })
-      if (!resp.token) return { errors: {}, formError: resp.message || 'Email or password is incorrect.', values }
-    } else {
-      await RegisterAccount({
-        firstName: field(data, 'firstName'),
-        lastName: field(data, 'lastName'),
-        email,
-        password,
-        confirmPassword: String(data.get('confirmPassword') ?? ''),
-      })
-    }
+    const resp =
+      mode === 'login'
+        ? await SignIn({ email, password })
+        : await RegisterAccount({
+            firstName: field(data, 'firstName'),
+            lastName: field(data, 'lastName'),
+            email,
+            password,
+            confirmPassword: String(data.get('confirmPassword') ?? ''),
+          })
+    if (!resp.token) return { errors: {}, formError: resp.message || 'Email or password is incorrect.', values }
+    setToken(resp.token)
   } catch (err) {
     return { errors: {}, formError: err instanceof Error ? err.message : 'Something went wrong. Try again.', values }
   }
 
-  window.location.hash = '#/app'
+  window.location.hash = await nextRoute()
   return INITIAL_STATE
+}
+
+/** New users go through onboarding once; everyone else goes straight to the app. */
+async function nextRoute(): Promise<string> {
+  try {
+    const status = await GetOnboardingStatus()
+    return status.isComplete ? '#/app' : '#/welcome'
+  } catch {
+    // Don't lock anyone out of the app if the check fails.
+    return '#/app'
+  }
 }
 
 export default function Auth({ mode }: { mode: AuthMode }) {
@@ -181,20 +192,6 @@ export default function Auth({ mode }: { mode: AuthMode }) {
               <input id="confirmPassword" name="confirmPassword" type={showPw ? 'text' : 'password'} autoComplete="new-password" aria-invalid={!!errors.confirmPassword} aria-describedby={described('confirmPassword')} />
               {err('confirmPassword')}
             </div>
-          )}
-
-          {mode === 'signup' && (
-            <fieldset className="field goal">
-              <legend>Main goal</legend>
-              <div className="segmented">
-                {GOALS.map((g) => (
-                  <label key={g}>
-                    <input type="radio" name="goal" value={g} defaultChecked={g === (values.goal || GOALS[0])} />
-                    <span>{g}</span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
           )}
 
           <button className="btn btn-primary btn-block" type="submit" disabled={busy}>

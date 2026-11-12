@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react'
 import { Logo, ThemeToggle, BeadString } from '../components'
+import { Walkthrough, type WalkthroughStep } from '../walkthrough'
+import { clearToken } from '../services/session'
 import { EXERCISES, FOODS, TARGETS, findExercise, findFood, kcalOf, macrosFor, sumMacros, fmt, uid } from '../data'
 import type { Meal, MealItem, MacroTotals } from '../models/Nutrition'
 import type { Workout, WorkoutExercise, WorkoutSet } from '../models/Workout'
@@ -388,7 +390,28 @@ function MealsPanel({ meals, setMeals, notify }: MealsPanelProps) {
   )
 }
 
-export default function Tracker({ tab }: { tab: TrackerTab }) {
+const TOUR_STEPS: WalkthroughStep[] = [
+  {
+    target: '.workout-panel .panel-head',
+    tab: 'workout',
+    title: 'Log your workout',
+    body: 'Name your session, add lifts, then tick off each set as you finish it. Volume and sets done add up here.',
+  },
+  {
+    target: '.meals-panel .kcal-left',
+    tab: 'meals',
+    title: 'Track what you eat',
+    body: 'Add foods to each meal and see how many calories you have left today.',
+  },
+  {
+    target: '.meals-panel .strands',
+    tab: 'meals',
+    title: 'Watch the beads fill',
+    body: 'Each strand is one target: calories, protein, carbs and fat. Beads fill as you log food.',
+  },
+]
+
+export default function Tracker({ tab, tour = false }: { tab: TrackerTab; tour?: boolean }) {
   const [workout, setWorkout] = useState<Workout>(initialWorkout)
   const [meals, setMeals] = useState<Meal[]>(initialMeals)
   const [toast, setToast] = useState<Toast | null>(null)
@@ -401,13 +424,19 @@ export default function Tracker({ tab }: { tab: TrackerTab }) {
   }
   useEffect(() => () => clearTimeout(timer.current), [])
 
+  // The walkthrough reads and changes the tab through the URL, like the tab links do.
+  const showTab = useCallback((next: TrackerTab) => {
+    if (next !== tab) window.location.hash = `#/app?tab=${next}&tour=1`
+  }, [tab])
+  const endTour = useCallback(() => window.location.replace(`#/app?tab=${tab}`), [tab])
+
   return (
     <div className="page tracker" data-tab={tab}>
       <header className="topbar app-bar">
         <Logo href="#/app" />
         <p className="today">{today}</p>
         <nav className="topbar-actions" aria-label="Account">
-          <a className="link" href="#/">Log out</a>
+          <a className="link" href="#/" onClick={clearToken}>Log out</a>
           <ThemeToggle />
         </nav>
       </header>
@@ -433,6 +462,8 @@ export default function Tracker({ tab }: { tab: TrackerTab }) {
           </div>
         )}
       </div>
+
+      {tour && <Walkthrough steps={TOUR_STEPS} onTab={showTab} onDone={endTour} />}
     </div>
   )
 }
