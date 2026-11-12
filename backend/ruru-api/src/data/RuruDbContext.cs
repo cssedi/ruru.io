@@ -14,9 +14,51 @@ namespace ruru_api.data
         public DbSet<Workout> Workout {get;set;}
         public DbSet<Exercise> Exercise {get;set;}
         public DbSet<WorkoutExercise> WorkoutExercise { get; set;}
+        public DbSet<UserProfile> UserProfile { get; set; }
+        public DbSet<UserConsent> UserConsent { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UserProfile>(entity =>
+            {
+                entity.ToTable("UserProfile");
+                entity.HasKey(p => p.UserId);
+
+                // Personal data goes with the account (POPIA deletion requests).
+                entity.HasOne(p => p.User)
+                    .WithOne(u => u.Profile)
+                    .HasForeignKey<UserProfile>(p => p.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                // Single-choice answers are stored by name so the column stays readable.
+                entity.Property(p => p.Sex).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.MainGoal).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.Pace).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.ActivityLevel).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.Experience).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.Sleep).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.TrainingLocation).HasConversion<string>().HasMaxLength(32);
+                entity.Property(p => p.Diet).HasConversion<string>().HasMaxLength(32);
+
+                entity.Property(p => p.HeightCm).HasPrecision(5, 1);
+                entity.Property(p => p.CurrentWeightKg).HasPrecision(5, 1);
+                entity.Property(p => p.GoalWeightKg).HasPrecision(5, 1);
+            });
+
+            modelBuilder.Entity<UserConsent>(entity =>
+            {
+                entity.ToTable("UserConsent");
+                entity.HasKey(c => c.Id);
+                entity.Property(c => c.Purpose).HasMaxLength(64);
+                entity.Property(c => c.Version).HasMaxLength(32);
+                entity.HasIndex(c => new { c.UserId, c.Purpose });
+
+                entity.HasOne(c => c.User)
+                    .WithMany()
+                    .HasForeignKey(c => c.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
             modelBuilder.Entity<Workout>(entity =>
             {
                 entity.HasKey(w => w.Id);

@@ -1,9 +1,13 @@
+using System.Text;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using ruru_api.DTOs.Auth;
 using ruru_api.services.AuthService;
+using ruru_api.services.OnboardingService;
+using ruru_api.repositories.ProfileRepository;
 using ruru_api.services.WorkoutService;
 using ruru_api.data;
 using ruru_api.model;
@@ -15,33 +19,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    // Enums (onboarding answers) are sent and received as names, e.g. "BuildMuscle".
+    .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 
 builder.Services.AddDbContext<RuruDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
-
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer("WebUI", options =>
-    {
-        options.MetadataAddress = builder.Configuration["Api:MetadataAddress"]!;
-        options.Authority = builder.Configuration["Api:Authority"];
-        options.Audience = builder.Configuration["Api:Audience"];
-        options.TokenValidationParameters = new TokenValidationParameters()
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateIssuerSigningKey = true,
-            ValidAudience = builder.Configuration["Api:Audience"],
-            ValidIssuer = builder.Configuration["Api:Issuer"],
-            ValidAudiences = builder.Configuration.GetSection("Api:ValidAudiences").Get<string[]>(),
-            ValidIssuers = builder.Configuration.GetSection("Api:ValidAudiences").Get<string[]>(),
-        };
-        
-        options.MapInboundClaims = false;
-    });
 
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 {
@@ -58,6 +43,34 @@ builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
     .AddEntityFrameworkStores<RuruDbContext>()
     .AddDefaultTokenProviders();
 
+// Registered after AddIdentity: AddIdentity makes its cookie scheme the default,
+// so these options switch the API back to bearer tokens.
+// Tokens are issued by AuthService with the same key, issuer and audience.
+var jwtSettings = builder.Configuration.GetSection("Api");
+var jwtIssuer = jwtSettings["Authority"];
+var jwtAudience = jwtSettings["Audience"];
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.MapInboundClaims = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"] ?? string.Empty)),
+            ValidateIssuer = !string.IsNullOrEmpty(jwtIssuer),
+            ValidIssuer = jwtIssuer,
+            ValidateAudience = !string.IsNullOrEmpty(jwtAudience),
+            ValidAudience = jwtAudience,
+            ValidateLifetime = true,
+        };
+    });
+builder.Services.AddAuthorization();
+
 
 builder.Services.AddCors(option =>
 {
@@ -73,6 +86,8 @@ builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IOnboardingService, OnboardingService>();
 
 
 var app = builder.Build();
@@ -104,6 +119,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("OpenPolicy");
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

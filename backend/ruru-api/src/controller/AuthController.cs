@@ -28,10 +28,10 @@ namespace ruru_api.controller
 
              if (!result.Succeeded)
              {
-                 return BadRequest(new { errors = result.Errors });
+                 return BadRequest(new { message = string.Join(" ", result.Errors), errors = result.Errors });
              }
 
-             return Ok(new {result.Value});
+             return Ok(result.Value);
          }
 
          [HttpPost("login")]
@@ -40,9 +40,9 @@ namespace ruru_api.controller
              var response = await _authService.SignInAsync(dto);
              if (!response.Succeeded)
              {
-                 return BadRequest(new { response.Errors });
+                 return BadRequest(new { message = string.Join(" ", response.Errors), errors = response.Errors });
              }
-             return Ok(new {response});
+             return Ok(response.Value);
          }
      }
 }
