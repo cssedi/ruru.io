@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ruru_api.common;
 using ruru_api.DTOs.Workouts;
 using ruru_api.services.WorkoutService;
 
@@ -18,17 +19,27 @@ namespace ruru_api.controller
         [HttpGet("GetWorkouts/{userId:guid}")]
         public async Task<IActionResult> GetWorkouts(Guid userId)
         {
-            var workouts = await _workoutService.GetByUserIdAsync(userId);
+            var result = await _workoutService.GetByUserIdAsync(userId);
 
-            return Ok(workouts);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpPost("CreateWorkout")]
         public async Task<IActionResult> CreateWorkout(CreateWorkoutRequest dto)
         {
-            var workout = await _workoutService.CreateAsync(dto.UserId, dto);
+            var result = await _workoutService.CreateAsync(dto.UserId, dto);
 
-            return Ok(workout);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
     }
 }

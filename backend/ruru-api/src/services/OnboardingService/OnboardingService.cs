@@ -162,9 +162,9 @@ public class OnboardingService : IOnboardingService
             else if (age > 120) errors.Add("Check your date of birth.");
         }
 
-        if (a.HeightCm is < 100m or > 250m) errors.Add("Height must be between 100 and 250 cm.");
-        if (a.CurrentWeightKg is < 30m or > 300m) errors.Add("Current weight must be between 30 and 300 kg.");
-        if (a.GoalWeightKg is < 30m or > 300m) errors.Add("Goal weight must be between 30 and 300 kg.");
+        if (a.Height is < 100m or > 250m) errors.Add("Height must be between 100 and 250 cm.");
+        if (a.CurrentWeight is < 30m or > 300m) errors.Add("Current weight must be between 30 and 300 kg.");
+        if (a.GoalWeight is < 30m or > 300m) errors.Add("Goal weight must be between 30 and 300 kg.");
         if (a.WorkoutMinutes is { } minutes && !WorkoutMinuteOptions.Contains(minutes))
         {
             errors.Add("Workout length must be 15, 30, 45, 60 or 90 minutes.");
@@ -188,9 +188,9 @@ public class OnboardingService : IOnboardingService
         if (p?.Sex is null) missing.Add("sex");
         if (p?.DateOfBirth is null) missing.Add("date of birth");
         if (p?.MainGoal is null) missing.Add("main goal");
-        if (p?.HeightCm is null) missing.Add("height");
-        if (p?.CurrentWeightKg is null) missing.Add("current weight");
-        if (p?.GoalWeightKg is null) missing.Add("goal weight");
+        if (p?.Height is null) missing.Add("height");
+        if (p?.CurrentWeight is null) missing.Add("current weight");
+        if (p?.GoalWeight is null) missing.Add("goal weight");
         if (p?.ActivityLevel is null) missing.Add("activity level");
         return missing;
     }
@@ -207,9 +207,9 @@ public class OnboardingService : IOnboardingService
         p.Sex = a.Sex;
         p.DateOfBirth = a.DateOfBirth;
         p.MainGoal = a.MainGoal;
-        p.HeightCm = a.HeightCm;
-        p.CurrentWeightKg = a.CurrentWeightKg;
-        p.GoalWeightKg = a.GoalWeightKg;
+        p.Height = a.Height;
+        p.CurrentWeight = a.CurrentWeight;
+        p.GoalWeight = a.GoalWeight;
         p.Pace = a.Pace;
         p.HealthConsiderations = ToNames(a.HealthConsiderations);
         p.ActivityLevel = a.ActivityLevel;
@@ -229,9 +229,9 @@ public class OnboardingService : IOnboardingService
         Sex = p.Sex,
         DateOfBirth = p.DateOfBirth,
         MainGoal = p.MainGoal,
-        HeightCm = p.HeightCm,
-        CurrentWeightKg = p.CurrentWeightKg,
-        GoalWeightKg = p.GoalWeightKg,
+        Height = p.Height,
+        CurrentWeight = p.CurrentWeight,
+        GoalWeight = p.GoalWeight,
         Pace = p.Pace,
         HealthConsiderations = FromNames<HealthConsideration>(p.HealthConsiderations),
         ActivityLevel = p.ActivityLevel,

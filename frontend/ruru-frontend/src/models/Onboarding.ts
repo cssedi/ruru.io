@@ -26,9 +26,9 @@ export interface IOnboardingAnswers {
   /** ISO date, yyyy-mm-dd */
   dateOfBirth: string | null
   mainGoal: MainGoal | null
-  heightCm: number | null
-  currentWeightKg: number | null
-  goalWeightKg: number | null
+  height: number | null
+  currentWeight: number | null
+  goalWeight: number | null
   pace: GoalPace | null
   healthConsiderations: HealthConsideration[]
   activityLevel: ActivityLevel | null
@@ -58,9 +58,9 @@ export const EMPTY_ANSWERS: IOnboardingAnswers = {
   sex: null,
   dateOfBirth: null,
   mainGoal: null,
-  heightCm: null,
-  currentWeightKg: null,
-  goalWeightKg: null,
+  height: null,
+  currentWeight: null,
+  goalWeight: null,
   pace: null,
   healthConsiderations: [],
   activityLevel: null,

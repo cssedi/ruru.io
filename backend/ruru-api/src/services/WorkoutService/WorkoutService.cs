@@ -1,3 +1,4 @@
+using ruru_api.common;
 using ruru_api.DTOs.Workouts;
 using ruru_api.model;
 using ruru_api.repositories;
@@ -8,59 +9,47 @@ public class WorkoutService : IWorkoutService
 {
     private readonly IWorkoutRepository _repository;
 
-     public WorkoutService(IWorkoutRepository repository)
+    public WorkoutService(IWorkoutRepository repository)
     {
         _repository = repository;
     }
-    public async Task<WorkoutResponse> CreateAsync(Guid userId, CreateWorkoutRequest request)
-    {
-        var response = await _repository.AddAsync(userId, request);
-        WorkoutResponse result = new WorkoutResponse()
-        {
-            Id = response.Id,
-            Name = response.Name,
-            date = response.Date
-        };
 
+    public async Task<Result<WorkoutResponse>> CreateAsync(Guid userId, CreateWorkoutRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.Name))
+        {
+            return Result<WorkoutResponse>.Failure("Give the workout a name.");
+        }
+
+        var workout = await _repository.AddAsync(userId, request);
         await _repository.SaveChangesAsync();
 
-        return result;
+        return Result<WorkoutResponse>.Success(ToResponse(workout));
     }
 
-    public async Task<WorkoutResponse?> GetByIdAsync(Guid Id)
+    public async Task<Result<WorkoutResponse>> GetByIdAsync(Guid id)
     {
-        var response = await _repository.GetByIdAsync(Id);
+        var workout = await _repository.GetByIdAsync(id);
 
-        if (response == null)
+        if (workout is null)
         {
-            return null;
+            return Result<WorkoutResponse>.Failure("We couldn't find that workout.");
         }
-        WorkoutResponse result = new WorkoutResponse()
-        {
-            Id = response!.Id,
-            Name = response.Name,
-            date = response.Date
-        };
 
-        return result;
+        return Result<WorkoutResponse>.Success(ToResponse(workout));
     }
 
-    public async Task<List<WorkoutResponse>> GetByUserIdAsync(Guid userId)
+    public async Task<Result<List<WorkoutResponse>>> GetByUserIdAsync(Guid userId)
     {
-        List<Workout> response = await _repository.GetByUserIdAsync(userId);
-        List<WorkoutResponse> result = [];
+        var workouts = await _repository.GetByUserIdAsync(userId);
 
-        response.ForEach(w =>
-            {
-                WorkoutResponse value = new WorkoutResponse()
-                {
-                    Id = w.Id,
-                    Name = w.Name,
-                    date = w.Date
-                };
-                result.Append(value);
-            });
-
-        return result;
+        return Result<List<WorkoutResponse>>.Success(workouts.Select(ToResponse).ToList());
     }
+
+    private static WorkoutResponse ToResponse(Workout workout) => new()
+    {
+        Id = workout.Id,
+        Name = workout.Name,
+        date = workout.Date,
+    };
 }

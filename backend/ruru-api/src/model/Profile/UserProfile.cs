@@ -15,10 +15,10 @@ public class UserProfile
     public DateOnly? DateOfBirth { get; set; }
     public MainGoal? MainGoal { get; set; }
 
-    // Body (metric only)
-    public decimal? HeightCm { get; set; }
-    public decimal? CurrentWeightKg { get; set; }
-    public decimal? GoalWeightKg { get; set; }
+    // Body
+    public decimal? Height { get; set; }
+    public decimal? CurrentWeight { get; set; }
+    public decimal? GoalWeight { get; set; }
     public GoalPace? Pace { get; set; }
     public string[] HealthConsiderations { get; set; } = [];
 
@@ -48,9 +48,9 @@ public class UserProfile
         Sex = null;
         DateOfBirth = null;
         MainGoal = null;
-        HeightCm = null;
-        CurrentWeightKg = null;
-        GoalWeightKg = null;
+        Height = null;
+        CurrentWeight = null;
+        GoalWeight = null;
         Pace = null;
         HealthConsiderations = [];
         ActivityLevel = null;

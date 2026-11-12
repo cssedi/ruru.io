@@ -17,7 +17,7 @@ export type SingleKey =
   | 'workoutMinutes'
   | 'diet'
 export type MultiKey = 'healthConsiderations' | 'barriers' | 'trainingDays' | 'focusAreas' | 'excludedFoods'
-export type NumberKey = 'heightCm' | 'currentWeightKg' | 'goalWeightKg'
+export type NumberKey = 'height' | 'currentWeight' | 'goalWeight'
 
 export interface Option {
   value: string | number
@@ -110,10 +110,10 @@ export const SECTIONS: Section[] = [
     id: 'body',
     title: 'Body',
     questions: [
-      { kind: 'number', key: 'heightCm', title: 'How tall are you?', unit: 'cm', min: 100, max: 250, step: 1, required: true },
+      { kind: 'number', key: 'height', title: 'How tall are you?', unit: 'cm', min: 100, max: 250, step: 1, required: true },
       {
         kind: 'number',
-        key: 'currentWeightKg',
+        key: 'currentWeight',
         title: 'What do you weigh now?',
         unit: 'kg',
         min: 30,
@@ -123,7 +123,7 @@ export const SECTIONS: Section[] = [
       },
       {
         kind: 'number',
-        key: 'goalWeightKg',
+        key: 'goalWeight',
         title: 'What’s your goal weight?',
         unit: 'kg',
         min: 30,

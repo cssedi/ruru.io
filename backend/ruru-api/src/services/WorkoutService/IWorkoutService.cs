@@ -1,13 +1,11 @@
+using ruru_api.common;
 using ruru_api.DTOs.Workouts;
 
 namespace ruru_api.services.WorkoutService;
 
 public interface IWorkoutService
 {
-    Task <WorkoutResponse> CreateAsync(
-        Guid userId,
-        CreateWorkoutRequest request
-    );
-    Task<WorkoutResponse?> GetByIdAsync(Guid Id);
-    Task<List<WorkoutResponse>> GetByUserIdAsync(Guid userId);
+    Task<Result<WorkoutResponse>> CreateAsync(Guid userId, CreateWorkoutRequest request);
+    Task<Result<WorkoutResponse>> GetByIdAsync(Guid id);
+    Task<Result<List<WorkoutResponse>>> GetByUserIdAsync(Guid userId);
 }

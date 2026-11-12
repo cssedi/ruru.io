@@ -106,8 +106,8 @@ export default function Onboarding() {
         return
       }
       // Keeping fit usually means staying put, so start the goal at today's weight.
-      if (next.question.key === 'goalWeightKg' && answers.goalWeightKg === null && answers.mainGoal === 'KeepFit') {
-        setAnswers((a) => ({ ...a, goalWeightKg: a.currentWeightKg }))
+      if (next.question.key === 'goalWeight' && answers.goalWeight === null && answers.mainGoal === 'KeepFit') {
+        setAnswers((a) => ({ ...a, goalWeight: a.currentWeight }))
       }
       setStep(step + 1)
     })
@@ -445,15 +445,15 @@ const kg = (n: number) => `${Math.round(n)} kg`
 
 /** Gentle, informative notes under the body questions. BMI is a guide, so nothing here blocks. */
 function Feedback({ question, answers }: { question: Question; answers: IOnboardingAnswers }) {
-  const { heightCm, currentWeightKg, goalWeightKg, mainGoal } = answers
+  const { height, currentWeight, goalWeight, mainGoal } = answers
   const range = `${HEALTHY_BMI_MIN}–${HEALTHY_BMI_MAX}`
 
-  if (question.key === 'heightCm') {
+  if (question.key === 'height') {
     return <Note tone="info" title="Why we ask">Your height and weight give your BMI, which we use to set safe daily targets.</Note>
   }
 
-  if (question.key === 'currentWeightKg' && heightCm && currentWeightKg) {
-    const value = bmi(currentWeightKg, heightCm)
+  if (question.key === 'currentWeight' && height && currentWeight) {
+    const value = bmi(currentWeight, height)
     const band = bmiBand(value)
     const shown = value.toFixed(1)
     if (band === 'healthy') {
@@ -466,12 +466,12 @@ function Feedback({ question, answers }: { question: Question; answers: IOnboard
     )
   }
 
-  if (question.key === 'goalWeightKg' && heightCm && goalWeightKg) {
-    const value = bmi(goalWeightKg, heightCm)
+  if (question.key === 'goalWeight' && height && goalWeight) {
+    const value = bmi(goalWeight, height)
     const band = bmiBand(value)
-    const [low, high] = healthyWeightRange(heightCm)
+    const [low, high] = healthyWeightRange(height)
     const healthy = `${kg(low)}–${kg(high)}`
-    if (mainGoal === 'LoseWeight' && currentWeightKg && goalWeightKg > currentWeightKg) {
+    if (mainGoal === 'LoseWeight' && currentWeight && goalWeight > currentWeight) {
       return <Note tone="warn" title="That’s more than you weigh now">Did you mean to choose “Build muscle” as your main goal? You can go back and change it.</Note>
     }
     if (band === 'under') {
@@ -554,8 +554,8 @@ function ConsentScreen({ busy, error, onAgree, onNotNow }: ConsentScreenProps) {
 
 /** Where the plan is heading, from the user's own numbers only. */
 function Summary({ answers }: { answers: IOnboardingAnswers }) {
-  const now = answers.currentWeightKg ?? 0
-  const goal = answers.goalWeightKg ?? now
+  const now = answers.currentWeight ?? 0
+  const goal = answers.goalWeight ?? now
   const diff = goal - now
   const steady = Math.abs(diff) < 0.5
   const pace = answers.pace ?? 'Moderate'

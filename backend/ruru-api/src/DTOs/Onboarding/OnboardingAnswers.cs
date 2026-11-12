@@ -14,10 +14,10 @@ public class OnboardingAnswers
     public DateOnly? DateOfBirth { get; set; }
     public MainGoal? MainGoal { get; set; }
 
-    // Body (kg and cm)
-    public decimal? HeightCm { get; set; }
-    public decimal? CurrentWeightKg { get; set; }
-    public decimal? GoalWeightKg { get; set; }
+    // Body
+    public decimal? Height { get; set; }
+    public decimal? CurrentWeight { get; set; }
+    public decimal? GoalWeight { get; set; }
     public GoalPace? Pace { get; set; }
     public List<HealthConsideration> HealthConsiderations { get; set; } = [];
 

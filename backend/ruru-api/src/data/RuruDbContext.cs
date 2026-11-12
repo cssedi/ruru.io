@@ -40,9 +40,9 @@ namespace ruru_api.data
                 entity.Property(p => p.TrainingLocation).HasConversion<string>().HasMaxLength(32);
                 entity.Property(p => p.Diet).HasConversion<string>().HasMaxLength(32);
 
-                entity.Property(p => p.HeightCm).HasPrecision(5, 1);
-                entity.Property(p => p.CurrentWeightKg).HasPrecision(5, 1);
-                entity.Property(p => p.GoalWeightKg).HasPrecision(5, 1);
+                entity.Property(p => p.Height).HasPrecision(5, 1);
+                entity.Property(p => p.CurrentWeight).HasPrecision(5, 1);
+                entity.Property(p => p.GoalWeight).HasPrecision(5, 1);
             });
 
             modelBuilder.Entity<UserConsent>(entity =>
