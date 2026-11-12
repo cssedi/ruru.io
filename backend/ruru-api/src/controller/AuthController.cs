@@ -31,7 +31,7 @@ namespace ruru_api.controller
                  return BadRequest(new { errors = result.Errors });
              }
 
-             return Ok(result.Value);
+             return Ok(new {result.Value});
          }
 
          [HttpPost("login")]

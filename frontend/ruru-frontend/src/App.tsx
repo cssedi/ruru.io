@@ -1,17 +1,24 @@
 import { useEffect, useState } from 'react'
-import Landing from './pages/Landing.jsx'
-import Auth from './pages/Auth.jsx'
-import Tracker from './pages/Tracker.jsx'
+import Landing from './pages/Landing'
+import Auth from './pages/Auth'
+import Tracker from './pages/Tracker'
+
+interface Route {
+  path: string
+  query: URLSearchParams
+}
 
 // Tiny hash router: #/ , #/login , #/signup , #/app?tab=meals
-function parse() {
+function parse(): Route {
   const raw = window.location.hash.replace(/^#/, '') || '/'
   const [path, qs = ''] = raw.split('?')
   return { path, query: new URLSearchParams(qs) }
 }
 
+const TITLES: Record<string, string> = { '/login': 'Log in', '/signup': 'Create account', '/app': 'Today' }
+
 export default function App() {
-  const [route, setRoute] = useState(parse)
+  const [route, setRoute] = useState<Route>(parse)
 
   useEffect(() => {
     const onChange = () => {
@@ -23,15 +30,15 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const titles = { '/login': 'Log in', '/signup': 'Create account', '/app': 'Today' }
-    document.title = titles[route.path] ? `${titles[route.path]} | ruru` : 'ruru | Train and eat on one screen'
+    const title = TITLES[route.path]
+    document.title = title ? `${title} | ruru` : 'ruru | Train and eat on one screen'
   }, [route.path])
 
   switch (route.path) {
     case '/login':
-      return <Auth mode="login" />
+      return <Auth key="login" mode="login" />
     case '/signup':
-      return <Auth mode="signup" />
+      return <Auth key="signup" mode="signup" />
     case '/app':
       return <Tracker tab={route.query.get('tab') === 'meals' ? 'meals' : 'workout'} />
     default:

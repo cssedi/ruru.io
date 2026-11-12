@@ -10,9 +10,6 @@ namespace ruru_api.controller
     [ApiController]
     public class WorkoutController : ControllerBase
     {
-        // Temporary until auth provides the current user.
-        private static readonly Guid TestUserId = new("11111111-1111-1111-1111-111111111111");
-
         private readonly IWorkoutService _service;
 
         public WorkoutController(IWorkoutService service)
@@ -29,7 +26,7 @@ namespace ruru_api.controller
         [HttpPost("CreateWorkout")]
         public async Task<ActionResult<WorkoutResponse>> CreateWorkout([FromBody] CreateWorkoutRequest request)
         {
-            return await _service.CreateAsync(TestUserId, request);
+            return await _service.CreateAsync(request.UserId, request);
         }
     }
 }

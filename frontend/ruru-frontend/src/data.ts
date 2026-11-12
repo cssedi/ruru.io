@@ -1,7 +1,9 @@
 // Mock data only. Nothing here talks to a server.
+import type { Food, Macros, MacroTargets, MacroTotals } from './models/Nutrition'
+import type { Exercise } from './models/Workout'
 
 // Macros per 100 g (approximate, cooked where relevant)
-export const FOODS = [
+export const FOODS: Food[] = [
   { id: 'pap', name: 'Pap (stiff, cooked)', p: 2.3, c: 22, f: 0.5 },
   { id: 'morogo', name: 'Morogo, cooked', p: 3, c: 4, f: 0.5 },
   { id: 'chakalaka', name: 'Chakalaka', p: 2, c: 9, f: 3 },
@@ -21,7 +23,7 @@ export const FOODS = [
   { id: 'whey', name: 'Whey protein powder', p: 78, c: 8, f: 6 },
 ]
 
-export const EXERCISES = [
+export const EXERCISES: Exercise[] = [
   { id: 'squat', name: 'Barbell back squat', group: 'Legs' },
   { id: 'bench', name: 'Bench press', group: 'Chest' },
   { id: 'deadlift', name: 'Deadlift', group: 'Back' },
@@ -36,26 +38,38 @@ export const EXERCISES = [
   { id: 'curl', name: 'Dumbbell curl', group: 'Arms' },
 ]
 
-export const TARGETS = { kcal: 2400, p: 160, c: 260, f: 80 }
+export const TARGETS: MacroTargets = { kcal: 2400, p: 160, c: 260, f: 80 }
 
-export const kcalOf = ({ p, c, f }) => p * 4 + c * 4 + f * 9
+export const kcalOf = ({ p, c, f }: Macros): number => p * 4 + c * 4 + f * 9
 
-export function macrosFor(foodId, grams) {
-  const food = FOODS.find((x) => x.id === foodId)
+export function findFood(id: string): Food {
+  const food = FOODS.find((x) => x.id === id)
+  if (!food) throw new Error(`Unknown food: ${id}`)
+  return food
+}
+
+export function findExercise(id: string): Exercise {
+  const ex = EXERCISES.find((x) => x.id === id)
+  if (!ex) throw new Error(`Unknown exercise: ${id}`)
+  return ex
+}
+
+export function macrosFor(foodId: string, grams: number | string): MacroTotals {
+  const food = findFood(foodId)
   const k = (Number(grams) || 0) / 100
-  const m = { p: food.p * k, c: food.c * k, f: food.f * k }
+  const m: Macros = { p: food.p * k, c: food.c * k, f: food.f * k }
   return { ...m, kcal: kcalOf(m) }
 }
 
-export function sumMacros(list) {
-  return list.reduce(
+export function sumMacros(list: MacroTotals[]): MacroTotals {
+  return list.reduce<MacroTotals>(
     (a, m) => ({ p: a.p + m.p, c: a.c + m.c, f: a.f + m.f, kcal: a.kcal + m.kcal }),
     { p: 0, c: 0, f: 0, kcal: 0 },
   )
 }
 
 const nf = new Intl.NumberFormat('en-ZA', { maximumFractionDigits: 0 })
-export const fmt = (n) => nf.format(Math.round(n))
+export const fmt = (n: number): string => nf.format(Math.round(n))
 
 let seq = 100
-export const uid = () => `id${seq++}`
+export const uid = (): string => `id${seq++}`

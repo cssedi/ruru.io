@@ -7,7 +7,7 @@ The repo has two parts:
 | Part | Stack | Path |
 | --- | --- | --- |
 | Web app | React 19, TypeScript, Vite | [`frontend/ruru-frontend`](frontend/ruru-frontend) |
-| API | ASP.NET Core (.NET 10), EF Core, PostgreSQL, ASP.NET Identity, JWT | [`backend/ruru-api`](backend/ruru-api) |
+| API | ASP.NET Core (.NET 10), EF Core, PostgreSQL, ASP.NET Identity, JWT | [`backend/ruru-api`](backend/ruru-api) ([architecture](backend/ruru-api/README.md)) |
 
 ## Project status
 
@@ -92,6 +92,5 @@ dotnet ef database update
 
 ## Conventions
 
-- **C# namespaces** follow the folder path with `src` left out. For example, `src/controller/AuthController.cs` is in `ruru_api.controller`.
 - **Frontend routing** is a small hash router in `src/App.tsx`: `#/`, `#/login`, `#/signup`, `#/app?tab=workout|meals`.
 - **Frontend forms** use React 19 actions (`useActionState`); see `src/pages/Auth.tsx`.
