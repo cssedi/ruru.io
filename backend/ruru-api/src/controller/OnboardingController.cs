@@ -1,4 +1,3 @@
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ruru_api.common;
@@ -7,72 +6,94 @@ using ruru_api.services.OnboardingService;
 
 namespace ruru_api.controller
 {
-    /// <summary>
-    /// The signed-in user's onboarding questionnaire and consent.
-    /// The user always comes from the bearer token, never from the request, so a user can only
-    /// read or change their own answers.
-    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class OnboardingController : ControllerBase
     {
-        private readonly IOnboardingService _service;
+        private readonly IOnboardingService _onboardingService;
 
-        public OnboardingController(IOnboardingService service)
+        public OnboardingController(IOnboardingService onboardingService)
         {
-            _service = service;
+            _onboardingService = onboardingService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetStatus()
         {
-            if (!TryGetUserId(out var userId)) return Unauthorized();
-            return ToResponse(await _service.GetStatusAsync(userId));
+            var result = await _onboardingService.GetStatusAsync(User.GetUserId());
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpPut]
-        public async Task<IActionResult> SaveAnswers([FromBody] OnboardingAnswers answers)
+        public async Task<IActionResult> SaveAnswers(OnboardingAnswers dto)
         {
-            if (!TryGetUserId(out var userId)) return Unauthorized();
-            return ToResponse(await _service.SaveAnswersAsync(userId, answers));
+            var result = await _onboardingService.SaveAnswersAsync(User.GetUserId(), dto);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpPost("complete")]
         public async Task<IActionResult> Complete()
         {
-            if (!TryGetUserId(out var userId)) return Unauthorized();
-            return ToResponse(await _service.CompleteAsync(userId));
+            var result = await _onboardingService.CompleteAsync(User.GetUserId());
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpPost("skip")]
         public async Task<IActionResult> Skip()
         {
-            if (!TryGetUserId(out var userId)) return Unauthorized();
-            return ToResponse(await _service.SkipAsync(userId));
+            var result = await _onboardingService.SkipAsync(User.GetUserId());
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpPost("consent")]
-        public async Task<IActionResult> GiveConsent([FromBody] GiveConsentRequest request)
+        public async Task<IActionResult> GiveConsent(GiveConsentRequest dto)
         {
-            if (!TryGetUserId(out var userId)) return Unauthorized();
-            return ToResponse(await _service.GiveConsentAsync(userId, request));
+            var result = await _onboardingService.GiveConsentAsync(User.GetUserId(), dto);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpDelete("consent")]
         public async Task<IActionResult> WithdrawConsent()
         {
-            if (!TryGetUserId(out var userId)) return Unauthorized();
-            return ToResponse(await _service.WithdrawConsentAsync(userId));
+            var result = await _onboardingService.WithdrawConsentAsync(User.GetUserId());
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
-
-        // AuthService puts the user id in the "sub" claim; MapInboundClaims is off, so it keeps that name.
-        private bool TryGetUserId(out Guid userId) =>
-            Guid.TryParse(User.FindFirst(JwtRegisteredClaimNames.Sub)?.Value, out userId);
-
-        private IActionResult ToResponse<T>(Result<T> result) =>
-            result.Succeeded
-                ? Ok(result.Value)
-                : BadRequest(new { message = string.Join(" ", result.Errors), errors = result.Errors });
     }
 }

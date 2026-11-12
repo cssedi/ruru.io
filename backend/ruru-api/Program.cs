@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using ruru_api.common;
 using ruru_api.DTOs.Auth;
 using ruru_api.services.AuthService;
 using ruru_api.services.OnboardingService;
@@ -89,8 +90,15 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IOnboardingService, OnboardingService>();
 
+// Unhandled exceptions become an ErrorResponse with a matching status code (see GlobalExceptionHandler).
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
 
 var app = builder.Build();
+
+// First in the pipeline so it catches exceptions from everything after it.
+app.UseExceptionHandler();
 
 // Make sure every role in the UserRole enum exists in the database (safe to run on every startup)
 using (var scope = app.Services.CreateScope())

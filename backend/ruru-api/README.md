@@ -69,6 +69,40 @@ Repositories and services return `Result<T>` for expected failures (wrong passwo
 
 At the moment the auth flow uses `Result<T>`, but the workout flow doesn't yet.
 
+### Controllers and error handling
+
+Every controller action follows the same shape, as in `AuthController`:
+
+```csharp
+[HttpPost("login")]
+public async Task<IActionResult> SignIn(SignInRequestBody dto)
+{
+    var result = await _authService.SignInAsync(dto);
+
+    if (!result.Succeeded)
+    {
+        return BadRequest(new ErrorResponse(result.Errors));
+    }
+
+    return Ok(result.Value);
+}
+```
+
+- **Expected failures** come back from the service as `Result<T>`, and the controller returns `400` with an `ErrorResponse`: `{ "message": "...", "errors": ["..."] }`.
+- **Unexpected exceptions** are left to `GlobalExceptionHandler` (`src/common/`), which returns the same `ErrorResponse` shape with a fixed message. Controllers don't use try/catch.
+
+| Exception | Status |
+| --- | --- |
+| `UnauthorizedAccessException` | 401 |
+| `KeyNotFoundException` | 404 |
+| `ArgumentException` | 400 |
+| `DbUpdateException`, `InvalidOperationException` | 409 |
+| The client cancelled the request | No response |
+| Anything else | 500 |
+
+  The full exception is logged; clients never see stack traces or internal messages.
+- **Signed-in user:** actions on `[Authorize]` controllers read the user with `User.GetUserId()` (`src/common/ClaimsPrincipalExtensions.cs`), never from the request body. A token without a user id throws `UnauthorizedAccessException`, which becomes a 401.
+
 ### DTOs (Data Transfer Objects)
 
 Entities in `src/model/` are never sent over the wire directly. Requests and responses use dedicated classes in `src/DTOs/`, grouped by feature:

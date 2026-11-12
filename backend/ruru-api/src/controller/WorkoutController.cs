@@ -1,8 +1,6 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ruru_api.services.WorkoutService;
 using ruru_api.DTOs.Workouts;
+using ruru_api.services.WorkoutService;
 
 namespace ruru_api.controller
 {
@@ -10,23 +8,27 @@ namespace ruru_api.controller
     [ApiController]
     public class WorkoutController : ControllerBase
     {
-        private readonly IWorkoutService _service;
+        private readonly IWorkoutService _workoutService;
 
-        public WorkoutController(IWorkoutService service)
+        public WorkoutController(IWorkoutService workoutService)
         {
-            _service = service;
+            _workoutService = workoutService;
         }
 
         [HttpGet("GetWorkouts/{userId:guid}")]
-        public async Task<ActionResult<List<WorkoutResponse>>> GetWorkouts(Guid userId)
+        public async Task<IActionResult> GetWorkouts(Guid userId)
         {
-            return await _service.GetByUserIdAsync(userId);
+            var workouts = await _workoutService.GetByUserIdAsync(userId);
+
+            return Ok(workouts);
         }
 
         [HttpPost("CreateWorkout")]
-        public async Task<ActionResult<WorkoutResponse>> CreateWorkout([FromBody] CreateWorkoutRequest request)
+        public async Task<IActionResult> CreateWorkout(CreateWorkoutRequest dto)
         {
-            return await _service.CreateAsync(request.UserId, request);
+            var workout = await _workoutService.CreateAsync(dto.UserId, dto);
+
+            return Ok(workout);
         }
     }
 }
