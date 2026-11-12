@@ -133,6 +133,14 @@ The editable ERD is in [`docs/rurugileERD.drawio`](../../docs/rurugileERD.drawio
 - **ASP.NET Core Identity** manages users and roles. `User` extends `IdentityUser<Guid>` and `RuruDbContext` extends `IdentityDbContext<User, IdentityRole<Guid>, Guid>`, so every key is a GUID. Password and unique-email rules are configured in `Program.cs`.
 - **JWT bearer tokens:** after a successful register or login, `AuthService` creates an HMAC-SHA256 signed token. It contains the user's id (`sub`), email, a unique token id (`jti`), their name, and a claim for each role.
 - **Roles:** new users get the `User` role. Role names come from the `UserRole` enum.
+- **Protected endpoints:** JWT bearer is the default scheme (registered after `AddIdentity`, which would otherwise make cookies the default). Controllers marked `[Authorize]`, such as `OnboardingController`, read the user id from the token's `sub` claim, never from the request.
+
+## Onboarding and consent
+
+- **`UserProfile`** (one row per user) holds the onboarding answers. Single-choice answers are stored by enum name; multi-choice answers are PostgreSQL text arrays of enum names. The profile is deleted with the user.
+- **`UserConsent`** records consent to process health information, which POPIA treats as special personal information. Each row keeps the consent text version and when it was given or withdrawn. Withdrawing consent clears every stored answer.
+- **Consent text version:** `OnboardingService.CurrentConsentVersion` must match `CONSENT_VERSION` in the web app's `src/onboarding/consent.ts`. Bump both whenever the wording changes.
+- **Validation:** users must be 18 or older. Height, weight and workout length are range-checked, and the required answers are checked when onboarding is completed.
 
 ## Configuration
 

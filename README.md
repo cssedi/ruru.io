@@ -11,7 +11,8 @@ The repo has two parts:
 
 ## Project status
 
-- **Auth:** register and log in are wired end to end (React form, then API, then Identity).
+- **Auth:** register and log in are wired end to end (React form, then API, then Identity). The web app stores the returned token and sends it as a bearer token.
+- **Onboarding:** after first sign-in, users see a POPIA consent notice, an 18-question setup and a short walkthrough of the app. Answers are stored on `UserProfile`.
 - **Tracker:** the workout and meals screens run on local sample data (`src/data.ts`). The workout endpoints exist in the API but aren't called from the frontend yet.
 - **Nutrition:** frontend only for now; no API or database tables yet.
 
@@ -78,6 +79,14 @@ Vite forwards requests on `/api` to the API at `http://localhost:5266` (see `vit
 | `POST` | `/api/Auth/login` | Sign in and receive a token |
 | `GET` | `/api/Workout/GetWorkouts/{userId}` | List a user's workouts |
 | `POST` | `/api/Workout/CreateWorkout` | Create a workout |
+| `GET` | `/api/Onboarding` | The signed-in user's consent status, onboarding status and answers |
+| `PUT` | `/api/Onboarding` | Save answers (replaces all of them; needs consent) |
+| `POST` | `/api/Onboarding/complete` | Check the required answers and finish onboarding |
+| `POST` | `/api/Onboarding/skip` | Finish onboarding without saving health details |
+| `POST` | `/api/Onboarding/consent` | Record consent to process health details |
+| `DELETE` | `/api/Onboarding/consent` | Withdraw consent and delete the stored answers |
+
+The onboarding endpoints need a bearer token from register or login.
 
 Swagger has the full request and response shapes.
 
