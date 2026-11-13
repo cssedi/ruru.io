@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
-import { fmt } from './data.js'
+import { useEffect, useState, type ReactElement } from 'react'
+import { fmt } from './data'
+
+export type Theme = 'light' | 'dark'
+export type Tone = 'k' | 'p' | 'c' | 'f'
 
 /* Logo: a stepped "r" in the outlined, flat-colour geometry of Ndebele
    wall painting, with a single bead in the corner. */
-export function LogoMark({ size = 32 }) {
+export function LogoMark({ size = 32 }: { size?: number }) {
   return (
     <svg className="logo-mark" width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
       <rect x="1.5" y="1.5" width="29" height="29" rx="7" fill="var(--mark-bg)" stroke="var(--mark-line)" strokeWidth="2" />
@@ -13,7 +16,7 @@ export function LogoMark({ size = 32 }) {
   )
 }
 
-export function Logo({ href = '#/' }) {
+export function Logo({ href = '#/' }: { href?: string }) {
   return (
     <a className="logo" href={href} aria-label="ruru home">
       <LogoMark />
@@ -22,7 +25,7 @@ export function Logo({ href = '#/' }) {
   )
 }
 
-function readTheme() {
+function readTheme(): Theme {
   try {
     const saved = localStorage.getItem('ruru-theme')
     if (saved === 'light' || saved === 'dark') return saved
@@ -33,7 +36,7 @@ function readTheme() {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState(readTheme)
+  const [theme, setTheme] = useState<Theme>(readTheme)
 
   useEffect(() => {
     const root = document.documentElement
@@ -48,7 +51,7 @@ export function ThemeToggle() {
     }
   }, [theme])
 
-  const next = theme === 'dark' ? 'light' : 'dark'
+  const next: Theme = theme === 'dark' ? 'light' : 'dark'
   return (
     <button
       type="button"
@@ -73,11 +76,20 @@ export function ThemeToggle() {
 
 /* A strand of beads as a progress meter. 20 beads, grouped in fives by a
    small white spacer bead, so each group is a quarter of the target. */
-export function BeadString({ label, value, target, unit = 'g', tone, beads = 20 }) {
+interface BeadStringProps {
+  label: string
+  value: number
+  target: number
+  unit?: string
+  tone: Tone
+  beads?: number
+}
+
+export function BeadString({ label, value, target, unit = 'g', tone, beads = 20 }: BeadStringProps) {
   const ratio = target ? value / target : 0
   const filled = Math.min(beads, Math.round(ratio * beads))
   const over = value > target
-  const items = []
+  const items: ReactElement[] = []
   for (let i = 0; i < beads; i++) {
     if (i > 0 && i % 5 === 0) items.push(<span key={`s${i}`} className="bead spacer" />)
     items.push(<span key={i} className={i < filled ? 'bead on' : 'bead'} />)

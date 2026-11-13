@@ -81,7 +81,13 @@ public class AuthRepository : IAuthRepository
         {
             return Result<User?>.Failure("Your account is not allowed to sign in.");
         }
-            
+
+        // A wrong password is none of the cases above, so it has to be checked on its own.
+        if (!signInResult.Succeeded)
+        {
+            return Result<User?>.Failure("Email or password is incorrect.");
+        }
+
         return Result<User?>.Success(userResult);
     }
 

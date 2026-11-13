@@ -1,5 +1,5 @@
-import { Logo, ThemeToggle, BeadString, SteppedBand } from '../components.jsx'
-import { macrosFor, sumMacros, fmt, TARGETS } from '../data.js'
+import { Logo, ThemeToggle, BeadString, SteppedBand } from '../components'
+import { macrosFor, sumMacros, fmt, TARGETS } from '../data'
 
 const lunch = [
   { id: 'pap', name: 'Pap', g: 300 },
@@ -14,7 +14,7 @@ const sets = [
   { kg: 75, reps: 5, done: false },
 ]
 
-const localFoods = ['Pap', 'Morogo', 'Amasi', 'Chakalaka', 'Mogodu', 'Boerewors', 'Biltong', 'Sugar beans', 'Vetkoek']
+const localFoods: string[] = ['Pap', 'Morogo', 'Amasi', 'Chakalaka', 'Mogodu', 'Boerewors', 'Biltong', 'Sugar beans', 'Vetkoek']
 
 export default function Landing() {
   return (
@@ -106,7 +106,7 @@ export default function Landing() {
           <h2 id="local-title" className="section-title">The food you actually eat is already in the list</h2>
           <ul className="chips">
             {localFoods.map((f, i) => (
-              <li key={f} className={`chip tone-${['p', 'c', 'f'][i % 3]}`}><span className="dot" aria-hidden="true" />{f}</li>
+              <li key={f} className={`chip tone-${(['p', 'c', 'f'] as const)[i % 3]}`}><span className="dot" aria-hidden="true" />{f}</li>
             ))}
           </ul>
         </section>

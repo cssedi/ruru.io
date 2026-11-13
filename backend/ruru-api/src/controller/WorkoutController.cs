@@ -1,8 +1,7 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ruru_api.services.WorkoutService;
+using ruru_api.common;
 using ruru_api.DTOs.Workouts;
+using ruru_api.services.WorkoutService;
 
 namespace ruru_api.controller
 {
@@ -10,26 +9,37 @@ namespace ruru_api.controller
     [ApiController]
     public class WorkoutController : ControllerBase
     {
-        // Temporary until auth provides the current user.
-        private static readonly Guid TestUserId = new("11111111-1111-1111-1111-111111111111");
+        private readonly IWorkoutService _workoutService;
 
-        private readonly IWorkoutService _service;
-
-        public WorkoutController(IWorkoutService service)
+        public WorkoutController(IWorkoutService workoutService)
         {
-            _service = service;
+            _workoutService = workoutService;
         }
 
         [HttpGet("GetWorkouts/{userId:guid}")]
-        public async Task<ActionResult<List<WorkoutResponse>>> GetWorkouts(Guid userId)
+        public async Task<IActionResult> GetWorkouts(Guid userId)
         {
-            return await _service.GetByUserIdAsync(userId);
+            var result = await _workoutService.GetByUserIdAsync(userId);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
 
         [HttpPost("CreateWorkout")]
-        public async Task<ActionResult<WorkoutResponse>> CreateWorkout([FromBody] CreateWorkoutRequest request)
+        public async Task<IActionResult> CreateWorkout(CreateWorkoutRequest dto)
         {
-            return await _service.CreateAsync(TestUserId, request);
+            var result = await _workoutService.CreateAsync(dto.UserId, dto);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new ErrorResponse(result.Errors));
+            }
+
+            return Ok(result.Value);
         }
     }
 }

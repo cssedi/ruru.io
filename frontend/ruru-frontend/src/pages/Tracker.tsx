@@ -1,10 +1,24 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { Logo, ThemeToggle, BeadString } from '../components.jsx'
-import { EXERCISES, FOODS, TARGETS, macrosFor, sumMacros, fmt, uid } from '../data.js'
+import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react'
+import { Logo, ThemeToggle, BeadString } from '../components'
+import { Walkthrough, type WalkthroughStep } from '../walkthrough'
+import { clearToken } from '../services/session'
+import { EXERCISES, FOODS, TARGETS, findExercise, findFood, kcalOf, macrosFor, sumMacros, fmt, uid } from '../data'
+import type { Meal, MealItem, MacroTotals } from '../models/Nutrition'
+import type { Workout, WorkoutExercise, WorkoutSet } from '../models/Workout'
+
+export type TrackerTab = 'workout' | 'meals'
+type Notify = (msg: string, undo?: () => void) => void
+type Setter<T> = Dispatch<SetStateAction<T>>
+
+interface Toast {
+  id: string
+  msg: string
+  undo?: () => void
+}
 
 const today = new Intl.DateTimeFormat('en-ZA', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date())
 
-const initialWorkout = {
+const initialWorkout: Workout = {
   name: 'Push day',
   exercises: [
     {
@@ -20,7 +34,7 @@ const initialWorkout = {
   ],
 }
 
-const initialMeals = [
+const initialMeals: Meal[] = [
   {
     key: uid(),
     name: 'Breakfast',
@@ -41,10 +55,23 @@ const initialMeals = [
   },
 ]
 
+interface PickerOption {
+  id: string
+  name: string
+}
+
+interface PickerProps<T extends PickerOption> {
+  label: string
+  options: T[]
+  onPick: (id: string) => void
+  onClose: () => void
+  describe: (option: T) => string
+}
+
 /* Inline search list used for both lifts and foods. */
-function Picker({ label, options, onPick, onClose, describe }) {
+function Picker<T extends PickerOption>({ label, options, onPick, onClose, describe }: PickerProps<T>) {
   const [q, setQ] = useState('')
-  const inputRef = useRef(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   useEffect(() => inputRef.current?.focus(), [])
   const shown = options.filter((o) => o.name.toLowerCase().includes(q.trim().toLowerCase()))
   return (
@@ -80,20 +107,26 @@ function Picker({ label, options, onPick, onClose, describe }) {
   )
 }
 
-function WorkoutPanel({ workout, setWorkout, notify }) {
+interface WorkoutPanelProps {
+  workout: Workout
+  setWorkout: Setter<Workout>
+  notify: Notify
+}
+
+function WorkoutPanel({ workout, setWorkout, notify }: WorkoutPanelProps) {
   const [picking, setPicking] = useState(false)
   const done = workout.exercises.flatMap((e) => e.sets).filter((s) => s.done)
   const volume = done.reduce((a, s) => a + (Number(s.kg) || 0) * (Number(s.reps) || 0), 0)
 
-  const updateEx = (key, fn) =>
+  const updateEx = (key: string, fn: (e: WorkoutExercise) => WorkoutExercise) =>
     setWorkout((w) => ({ ...w, exercises: w.exercises.map((e) => (e.key === key ? fn(e) : e)) }))
-  const updateSet = (exKey, setKey, patch) =>
+  const updateSet = (exKey: string, setKey: string, patch: Partial<WorkoutSet>) =>
     updateEx(exKey, (e) => ({ ...e, sets: e.sets.map((s) => (s.key === setKey ? { ...s, ...patch } : s)) }))
 
-  function removeExercise(ex) {
+  function removeExercise(ex: WorkoutExercise) {
     const prev = workout
     setWorkout((w) => ({ ...w, exercises: w.exercises.filter((e) => e.key !== ex.key) }))
-    notify(`Removed ${EXERCISES.find((x) => x.id === ex.exId).name}.`, () => setWorkout(prev))
+    notify(`Removed ${findExercise(ex.exId).name}.`, () => setWorkout(prev))
   }
 
   return (
@@ -120,7 +153,7 @@ function WorkoutPanel({ workout, setWorkout, notify }) {
       )}
 
       {workout.exercises.map((ex) => {
-        const meta = EXERCISES.find((x) => x.id === ex.exId)
+        const meta = findExercise(ex.exId)
         return (
           <article className="block" key={ex.key}>
             <header className="block-head">
@@ -167,7 +200,7 @@ function WorkoutPanel({ workout, setWorkout, notify }) {
               className="btn btn-ghost btn-sm"
               onClick={() =>
                 updateEx(ex.key, (e) => {
-                  const last = e.sets[e.sets.length - 1] ?? { kg: 20, reps: 8 }
+                  const last: Pick<WorkoutSet, 'kg' | 'reps'> = e.sets[e.sets.length - 1] ?? { kg: 20, reps: 8 }
                   return { ...e, sets: [...e.sets, { key: uid(), kg: last.kg, reps: last.reps, done: false }] }
                 })
               }
@@ -206,10 +239,25 @@ function WorkoutPanel({ workout, setWorkout, notify }) {
   )
 }
 
-function MealsPanel({ meals, setMeals, notify }) {
-  const [pickingFor, setPickingFor] = useState(null)
+interface MealsPanelProps {
+  meals: Meal[]
+  setMeals: Setter<Meal[]>
+  notify: Notify
+}
 
-  const withMacros = useMemo(
+interface MealItemWithMacros extends MealItem {
+  m: MacroTotals
+}
+
+interface MealWithMacros extends Omit<Meal, 'items'> {
+  items: MealItemWithMacros[]
+  total: MacroTotals
+}
+
+function MealsPanel({ meals, setMeals, notify }: MealsPanelProps) {
+  const [pickingFor, setPickingFor] = useState<string | null>(null)
+
+  const withMacros = useMemo<MealWithMacros[]>(
     () =>
       meals.map((meal) => {
         const items = meal.items.map((it) => ({ ...it, m: macrosFor(it.foodId, it.g) }))
@@ -220,14 +268,14 @@ function MealsPanel({ meals, setMeals, notify }) {
   const day = sumMacros(withMacros.map((m) => m.total))
   const left = TARGETS.kcal - day.kcal
 
-  const updateMeal = (key, fn) => setMeals((ms) => ms.map((m) => (m.key === key ? fn(m) : m)))
+  const updateMeal = (key: string, fn: (m: Meal) => Meal) => setMeals((ms) => ms.map((m) => (m.key === key ? fn(m) : m)))
 
-  function removeItem(meal, item) {
+  function removeItem(meal: MealWithMacros, item: MealItem) {
     const prev = meals
     updateMeal(meal.key, (m) => ({ ...m, items: m.items.filter((i) => i.key !== item.key) }))
-    notify(`Removed ${FOODS.find((f) => f.id === item.foodId).name} from ${meal.name}.`, () => setMeals(prev))
+    notify(`Removed ${findFood(item.foodId).name} from ${meal.name}.`, () => setMeals(prev))
   }
-  function removeMeal(meal) {
+  function removeMeal(meal: MealWithMacros) {
     const prev = meals
     setMeals((ms) => ms.filter((m) => m.key !== meal.key))
     notify(`Removed ${meal.name || 'meal'}.`, () => setMeals(prev))
@@ -275,7 +323,7 @@ function MealsPanel({ meals, setMeals, notify }) {
           {meal.items.length > 0 ? (
             <ul className="food-list">
               {meal.items.map((it) => {
-                const food = FOODS.find((f) => f.id === it.foodId)
+                const food = findFood(it.foodId)
                 return (
                   <li key={it.key}>
                     <span className="food-name">{food.name}</span>
@@ -309,7 +357,7 @@ function MealsPanel({ meals, setMeals, notify }) {
             <Picker
               label="Search foods"
               options={FOODS}
-              describe={(o) => `${fmt(o.p * 4 + o.c * 4 + o.f * 9)} kcal / 100 g`}
+              describe={(o) => `${fmt(kcalOf(o))} kcal / 100 g`}
               onClose={() => setPickingFor(null)}
               onPick={(id) => {
                 updateMeal(meal.key, (m) => ({ ...m, items: [...m.items, { key: uid(), foodId: id, g: 100 }] }))
@@ -342,18 +390,45 @@ function MealsPanel({ meals, setMeals, notify }) {
   )
 }
 
-export default function Tracker({ tab }) {
-  const [workout, setWorkout] = useState(initialWorkout)
-  const [meals, setMeals] = useState(initialMeals)
-  const [toast, setToast] = useState(null)
-  const timer = useRef()
+const TOUR_STEPS: WalkthroughStep[] = [
+  {
+    target: '.workout-panel .panel-head',
+    tab: 'workout',
+    title: 'Log your workout',
+    body: 'Name your session, add lifts, then tick off each set as you finish it. Volume and sets done add up here.',
+  },
+  {
+    target: '.meals-panel .kcal-left',
+    tab: 'meals',
+    title: 'Track what you eat',
+    body: 'Add foods to each meal and see how many calories you have left today.',
+  },
+  {
+    target: '.meals-panel .strands',
+    tab: 'meals',
+    title: 'Watch the beads fill',
+    body: 'Each strand is one target: calories, protein, carbs and fat. Beads fill as you log food.',
+  },
+]
 
-  function notify(msg, undo) {
+export default function Tracker({ tab, tour = false }: { tab: TrackerTab; tour?: boolean }) {
+  const [workout, setWorkout] = useState<Workout>(initialWorkout)
+  const [meals, setMeals] = useState<Meal[]>(initialMeals)
+  const [toast, setToast] = useState<Toast | null>(null)
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+
+  const notify: Notify = (msg, undo) => {
     clearTimeout(timer.current)
     setToast({ msg, undo, id: uid() })
     timer.current = setTimeout(() => setToast(null), 6000)
   }
   useEffect(() => () => clearTimeout(timer.current), [])
+
+  // The walkthrough reads and changes the tab through the URL, like the tab links do.
+  const showTab = useCallback((next: TrackerTab) => {
+    if (next !== tab) window.location.hash = `#/app?tab=${next}&tour=1`
+  }, [tab])
+  const endTour = useCallback(() => window.location.replace(`#/app?tab=${tab}`), [tab])
 
   return (
     <div className="page tracker" data-tab={tab}>
@@ -361,7 +436,7 @@ export default function Tracker({ tab }) {
         <Logo href="#/app" />
         <p className="today">{today}</p>
         <nav className="topbar-actions" aria-label="Account">
-          <a className="link" href="#/">Log out</a>
+          <a className="link" href="#/" onClick={clearToken}>Log out</a>
           <ThemeToggle />
         </nav>
       </header>
@@ -382,11 +457,13 @@ export default function Tracker({ tab }) {
           <div className="toast" key={toast.id}>
             <span>{toast.msg}</span>
             {toast.undo && (
-              <button type="button" className="link" onClick={() => { toast.undo(); setToast(null) }}>Undo</button>
+              <button type="button" className="link" onClick={() => { toast.undo?.(); setToast(null) }}>Undo</button>
             )}
           </div>
         )}
       </div>
+
+      {tour && <Walkthrough steps={TOUR_STEPS} onTab={showTab} onDone={endTour} />}
     </div>
   )
 }

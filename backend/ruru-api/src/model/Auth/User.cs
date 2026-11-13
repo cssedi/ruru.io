@@ -13,9 +13,7 @@ public class User : IdentityUser<Guid>
     [Required]
     [StringLength(25)]
     public string LastName {get; init;}
-    public int Age {get; init;}
-    public float Weight {get;init;}
-    public float Height { get; init; }
     public ICollection<Workout> Workouts {get; init;} = new List<Workout>();
+    public UserProfile? Profile { get; set; }
 
 }
