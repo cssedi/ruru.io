@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ruru_api.data;
-using ruru_api.model;
 
 #nullable disable
 
@@ -199,9 +198,6 @@ namespace ruru_api.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("text");
@@ -217,9 +213,6 @@ namespace ruru_api.Migrations
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("character varying(25)");
-
-                    b.Property<float>("Height")
-                        .HasColumnType("real");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -259,9 +252,6 @@ namespace ruru_api.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
-                    b.Property<float>("Weight")
-                        .HasColumnType("real");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -272,6 +262,124 @@ namespace ruru_api.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("ruru_api.model.UserConsent", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("GivenAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Purpose")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Version")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<DateTime?>("WithdrawnAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId", "Purpose");
+
+                    b.ToTable("UserConsent", (string)null);
+                });
+
+            modelBuilder.Entity("ruru_api.model.UserProfile", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ActivityLevel")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.PrimitiveCollection<string[]>("Barriers")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<decimal?>("CurrentWeight")
+                        .HasPrecision(5, 1)
+                        .HasColumnType("numeric(5,1)");
+
+                    b.Property<DateOnly?>("DateOfBirth")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Diet")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.PrimitiveCollection<string[]>("ExcludedFoods")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("Experience")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.PrimitiveCollection<string[]>("FocusAreas")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<decimal?>("GoalWeight")
+                        .HasPrecision(5, 1)
+                        .HasColumnType("numeric(5,1)");
+
+                    b.PrimitiveCollection<string[]>("HealthConsiderations")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<decimal?>("Height")
+                        .HasPrecision(5, 1)
+                        .HasColumnType("numeric(5,1)");
+
+                    b.Property<string>("MainGoal")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<DateTime?>("OnboardingCompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Pace")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<string>("Sex")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<string>("Sleep")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.PrimitiveCollection<string[]>("TrainingDays")
+                        .IsRequired()
+                        .HasColumnType("text[]");
+
+                    b.Property<string>("TrainingLocation")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("WorkoutMinutes")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("UserProfile", (string)null);
                 });
 
             modelBuilder.Entity("ruru_api.model.Workout", b =>
@@ -305,10 +413,10 @@ namespace ruru_api.Migrations
                     b.Property<Guid>("WorkoutId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("MaxReps")
+                    b.Property<int?>("MaxReps")
                         .HasColumnType("integer");
 
-                    b.Property<int>("MinReps")
+                    b.Property<int?>("MinReps")
                         .HasColumnType("integer");
 
                     b.Property<int>("Weight")
@@ -372,6 +480,28 @@ namespace ruru_api.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ruru_api.model.UserConsent", b =>
+                {
+                    b.HasOne("ruru_api.model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ruru_api.model.UserProfile", b =>
+                {
+                    b.HasOne("ruru_api.model.User", "User")
+                        .WithOne("Profile")
+                        .HasForeignKey("ruru_api.model.UserProfile", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ruru_api.model.Workout", b =>
                 {
                     b.HasOne("ruru_api.model.User", "User")
@@ -409,6 +539,8 @@ namespace ruru_api.Migrations
 
             modelBuilder.Entity("ruru_api.model.User", b =>
                 {
+                    b.Navigation("Profile");
+
                     b.Navigation("Workouts");
                 });
 
