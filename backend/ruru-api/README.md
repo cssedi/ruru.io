@@ -188,6 +188,18 @@ Settings are read through `IConfiguration`. Keep secrets in [.NET user secrets](
 | `Api:ExpireMinutes` | Token lifetime |
 | `Api:ValidIssuers`, `Api:ValidAudiences`, `Api:MetadataAddress` | JWT validation |
 
+## Tests
+
+Tests live in [`backend/ruru-api.Tests`](../ruru-api.Tests) (xUnit). Run them from the repo root:
+
+```bash
+dotnet test backend/ruru-api.Tests
+```
+
+- **Unit tests** (`Unit/`) cover services and shared classes. Repositories are replaced by small in-memory fakes in `Fakes/`, so no database is needed.
+- **API tests** (`Api/`) start the real app with `WebApplicationFactory<Program>` and an EF Core in-memory database, then call the endpoints over HTTP. They check response shapes, status codes and that protected endpoints need a valid token.
+- **CI:** `.github/workflows/backend-tests.yml` builds and tests every PR that touches `backend/`, checks that every model change has a migration, and posts the results on the PR.
+
 ## Adding a feature
 
 To add a new feature (for example, meals), follow the existing pattern:
