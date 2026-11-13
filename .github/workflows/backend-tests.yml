@@ -52,20 +52,6 @@ jobs:
           dotnet tool install --global dotnet-ef --version 10.0.12
           dotnet ef migrations has-pending-model-changes --project backend/ruru-api 2>&1 | tee migrations.log
 
-      # TEMPORARY: generates the missing AddUserProfileAndConsent migration and posts it on the PR
-      # so it can be committed. Remove once the migration is in the repo.
-      - name: Generate missing migration (temporary)
-        if: steps.migrations.outcome == 'failure' && github.event_name == 'pull_request'
-        shell: bash
-        run: |
-          mkdir -p comments
-          dotnet ef migrations add AddUserProfileAndConsent --project backend/ruru-api --output-dir Migrations
-          n=2
-          for f in $(git ls-files --others --exclude-standard backend/ruru-api/Migrations) backend/ruru-api/Migrations/RuruDBContextModelSnapshot.cs; do
-            { echo "MIGRATION-FILE: $f"; echo '```csharp'; cat "$f"; echo '```'; } > "comments/$n-file.md"
-            n=$((n+1))
-          done
-
       - name: Write PR comment
         if: always() && github.event_name == 'pull_request'
         shell: bash
