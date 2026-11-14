@@ -172,7 +172,7 @@ public class OnboardingService : IOnboardingService
 
         // JSON numbers can deserialise into enum values that don't exist, so check every choice.
         if (!IsDefined(a.Sex) || !IsDefined(a.MainGoal) || !IsDefined(a.Pace) || !IsDefined(a.ActivityLevel)
-            || !IsDefined(a.Experience) || !IsDefined(a.Sleep) || !IsDefined(a.TrainingLocation) || !IsDefined(a.Diet)
+            || !IsDefined(a.Experience) || !IsDefined(a.Sleep) || !IsDefined(a.TrainingLocation) || !IsDefined(a.Diet) || !IsDefined(a.StartWith)
             || !AllDefined(a.HealthConsiderations) || !AllDefined(a.Barriers) || !AllDefined(a.TrainingDays)
             || !AllDefined(a.FocusAreas) || !AllDefined(a.ExcludedFoods))
         {
@@ -222,6 +222,7 @@ public class OnboardingService : IOnboardingService
         p.FocusAreas = ToNames(a.FocusAreas);
         p.Diet = a.Diet;
         p.ExcludedFoods = ToNames(a.ExcludedFoods);
+        p.StartWith = a.StartWith;
     }
 
     private static OnboardingAnswers ToAnswers(UserProfile p) => new()
@@ -244,6 +245,7 @@ public class OnboardingService : IOnboardingService
         FocusAreas = FromNames<FocusArea>(p.FocusAreas),
         Diet = p.Diet,
         ExcludedFoods = FromNames<ExcludedFood>(p.ExcludedFoods),
+        StartWith = p.StartWith,
     };
 
     // Multi-select answers are stored as text arrays of enum names.

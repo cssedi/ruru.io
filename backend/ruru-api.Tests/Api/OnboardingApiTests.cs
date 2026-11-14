@@ -76,6 +76,7 @@ public class OnboardingApiTests : IClassFixture<RuruApiFactory>
         Assert.Equal("NonBinary", answers.GetProperty("sex").GetString());
         Assert.Equal(178m, answers.GetProperty("height").GetDecimal());
         Assert.Equal("Monday", answers.GetProperty("trainingDays")[0].GetString());
+        Assert.Equal("Meals", answers.GetProperty("startWith").GetString());
 
         var complete = await client.PostAsync("/api/onboarding/complete", null);
         Assert.Equal(HttpStatusCode.OK, complete.StatusCode);
@@ -156,5 +157,6 @@ public class OnboardingApiTests : IClassFixture<RuruApiFactory>
         focusAreas = Array.Empty<string>(),
         diet = (string?)null,
         excludedFoods = Array.Empty<string>(),
+        startWith = "Meals",
     };
 }

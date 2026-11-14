@@ -19,6 +19,8 @@ export type TrainingLocation = 'Gym' | 'HomeWithEquipment' | 'Bodyweight'
 export type DayOfWeek = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'
 export type FocusArea = 'Chest' | 'Back' | 'Shoulders' | 'Arms' | 'Core' | 'Legs'
 export type DietType = 'NoPreference' | 'Vegetarian' | 'Vegan' | 'Pescatarian' | 'Keto' | 'Mediterranean'
+/** Which tab the app walkthrough starts on. */
+export type StartSection = 'Workouts' | 'Meals'
 export type ExcludedFood = 'Dairy' | 'Gluten' | 'Eggs' | 'Fish' | 'Nuts' | 'Pork'
 
 export interface IOnboardingAnswers {
@@ -41,6 +43,7 @@ export interface IOnboardingAnswers {
   focusAreas: FocusArea[]
   diet: DietType | null
   excludedFoods: ExcludedFood[]
+  startWith: StartSection | null
 }
 
 export interface IOnboardingStatus {
@@ -73,4 +76,5 @@ export const EMPTY_ANSWERS: IOnboardingAnswers = {
   focusAreas: [],
   diet: null,
   excludedFoods: [],
+  startWith: null,
 }

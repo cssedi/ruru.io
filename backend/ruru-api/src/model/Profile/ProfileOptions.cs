@@ -94,6 +94,13 @@ public enum DietType
     Mediterranean
 }
 
+/// <summary>Which part of the app the walkthrough starts with.</summary>
+public enum StartSection
+{
+    Workouts,
+    Meals
+}
+
 public enum ExcludedFood
 {
     Dairy,

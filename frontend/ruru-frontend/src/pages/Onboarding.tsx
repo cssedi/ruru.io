@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type FormEvent, type PointerEvent, type ReactNode } from 'react'
 import { Logo, ThemeToggle } from '../components'
-import { EMPTY_ANSWERS, type IOnboardingAnswers } from '../models/Onboarding'
+import { EMPTY_ANSWERS, type IOnboardingAnswers, type StartSection } from '../models/Onboarding'
 import { ApiError } from '../services/http'
 import { CompleteOnboarding, GetOnboardingStatus, GiveConsent, SaveOnboardingAnswers, SkipOnboarding } from '../services/Onboarding'
 import { clearToken } from '../services/session'
@@ -29,7 +29,9 @@ import {
 
 type Phase = 'loading' | 'consent' | 'questions' | 'summary' | 'failed'
 
-const TOUR_ROUTE = '#/app?tour=1'
+/** The app walkthrough, starting on the tab the user chose in the last question (workouts if skipped). */
+const tourRoute = (startWith: StartSection | null = null) =>
+  startWith === 'Meals' ? '#/app?tab=meals&tour=meals' : '#/app?tab=workout&tour=workout'
 const SWIPE_PX = 60
 
 /*
@@ -90,7 +92,7 @@ export default function Onboarding() {
   const notNow = () =>
     run(async () => {
       await SkipOnboarding()
-      window.location.hash = TOUR_ROUTE
+      window.location.hash = tourRoute()
     })
 
   /** Moves forward one question, saving at the end of each section and finishing at the end. */
@@ -582,7 +584,7 @@ function Summary({ answers }: { answers: IOnboardingAnswers }) {
           doctor before making big changes.
         </p>
 
-        <button type="button" className="btn btn-primary btn-block" onClick={() => (window.location.hash = TOUR_ROUTE)}>
+        <button type="button" className="btn btn-primary btn-block" onClick={() => (window.location.hash = tourRoute(answers.startWith))}>
           Show me around
         </button>
       </section>

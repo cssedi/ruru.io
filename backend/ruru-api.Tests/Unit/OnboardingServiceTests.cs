@@ -86,6 +86,35 @@ public class OnboardingServiceTests
         Assert.Equal(new[] { DayOfWeek.Monday, DayOfWeek.Friday }, result.Value!.Answers.TrainingDays);
     }
 
+    [Theory]
+    [InlineData(StartSection.Workouts)]
+    [InlineData(StartSection.Meals)]
+    public async Task SaveAnswers_StoresWhereTheUserWantsToStart(StartSection startWith)
+    {
+        await GiveConsentAsync();
+        var answers = ValidAnswers();
+        answers.StartWith = startWith;
+
+        var result = await _service.SaveAnswersAsync(_userId, answers);
+
+        Assert.True(result.Succeeded);
+        Assert.Equal(startWith, _repository.Profiles.Single().StartWith);
+        Assert.Equal(startWith, result.Value!.Answers.StartWith);
+    }
+
+    [Fact]
+    public async Task Complete_WithoutStartWith_Succeeds()
+    {
+        // The last question is optional; the walkthrough then starts with workouts.
+        await GiveConsentAsync();
+        await _service.SaveAnswersAsync(_userId, ValidAnswers());
+
+        var result = await _service.CompleteAsync(_userId);
+
+        Assert.True(result.Succeeded);
+        Assert.Null(result.Value!.Answers.StartWith);
+    }
+
     [Fact]
     public async Task SaveAnswers_WhenUnder18_Fails()
     {
@@ -215,6 +244,7 @@ public class OnboardingServiceTests
         Assert.Null(profile.Sex);
         Assert.Null(profile.Height);
         Assert.Empty(profile.TrainingDays);
+        Assert.Null(profile.StartWith);
         Assert.NotNull(_repository.Consents.Single().WithdrawnAt);
     }
 

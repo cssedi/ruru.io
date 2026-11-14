@@ -36,4 +36,7 @@ public class OnboardingAnswers
     // Nutrition
     public DietType? Diet { get; set; }
     public List<ExcludedFood> ExcludedFoods { get; set; } = [];
+
+    // Getting started
+    public StartSection? StartWith { get; set; }
 }

@@ -16,6 +16,7 @@ export type SingleKey =
   | 'trainingLocation'
   | 'workoutMinutes'
   | 'diet'
+  | 'startWith'
 export type MultiKey = 'healthConsiderations' | 'barriers' | 'trainingDays' | 'focusAreas' | 'excludedFoods'
 export type NumberKey = 'height' | 'currentWeight' | 'goalWeight'
 
@@ -298,6 +299,22 @@ export const SECTIONS: Section[] = [
           { value: 'Fish', label: 'Fish' },
           { value: 'Nuts', label: 'Nuts' },
           { value: 'Pork', label: 'Pork' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'start',
+    title: 'Getting started',
+    questions: [
+      {
+        kind: 'single',
+        key: 'startWith',
+        title: 'Where would you like to start?',
+        subtitle: 'We’ll show you around that part first. You can use both any time.',
+        options: [
+          { value: 'Workouts', label: 'Workouts', hint: 'Log sessions and build your training.' },
+          { value: 'Meals', label: 'Meals', hint: 'Track what you eat and your macros.' },
         ],
       },
     ],
