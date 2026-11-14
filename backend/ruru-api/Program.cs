@@ -134,3 +134,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// Lets the API tests start this app in memory (WebApplicationFactory<Program>).
+public partial class Program { }

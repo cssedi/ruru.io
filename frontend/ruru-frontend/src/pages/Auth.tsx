@@ -89,7 +89,9 @@ async function authAction(mode: AuthMode, _prev: AuthState, data: FormData): Pro
             password,
             confirmPassword: String(data.get('confirmPassword') ?? ''),
           })
-    if (!resp.token) return { errors: {}, formError: resp.message || 'Email or password is incorrect.', values }
+    // A 200 without a token means the API and the app disagree about the response shape;
+    // don't blame the user's password for that.
+    if (!resp.token) return { errors: {}, formError: 'We couldn’t sign you in. Try again in a moment.', values }
     setToken(resp.token)
   } catch (err) {
     return { errors: {}, formError: err instanceof Error ? err.message : 'Something went wrong. Try again.', values }
