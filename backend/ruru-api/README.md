@@ -188,6 +188,12 @@ Settings are read through `IConfiguration`. Keep secrets in [.NET user secrets](
 | `Api:ExpireMinutes` | Token lifetime |
 | `Api:ValidIssuers`, `Api:ValidAudiences`, `Api:MetadataAddress` | JWT validation |
 
+## Exercise catalogue
+
+- **Seed data:** `src/data/Seed/exercises.json` holds 500 starter exercises and is embedded in the assembly. On startup, `ExerciseService.SeedAsync` adds any that are missing from the `Exercise` table, matched by name, so it is safe to run every time.
+- **Split by equipment:** 190 free weights, 140 bodyweight, 110 machines and cables, 60 portable kit (bands, balls, suspension trainers). The split follows where and how people train rather than an even share.
+- **Regenerating the file:** `python3 backend/tools/select_exercises.py <megaGymDataset.csv> backend/ruru-api/src/data/Seed/exercises.json`. The script documents the selection rules. Descriptions from the dataset are not seeded.
+
 ## Tests
 
 Tests live in [`backend/ruru-api.Tests`](../ruru-api.Tests) (xUnit). Run them from the repo root:
