@@ -391,6 +391,10 @@ namespace ruru_api.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("character varying(32)");
 
+                    b.Property<string>("StartWith")
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
                     b.PrimitiveCollection<string[]>("TrainingDays")
                         .IsRequired()
                         .HasColumnType("text[]");
