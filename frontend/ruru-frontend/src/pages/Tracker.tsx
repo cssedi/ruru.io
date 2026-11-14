@@ -51,10 +51,12 @@ interface TrackerProps {
   tab: TrackerTab
   /** When set, the one-time walkthrough runs, starting with this tab (the user's onboarding choice). */
   tour?: TrackerTab | null
+  /** Opens the AI plan on its readiness check. */
+  planOpen?: boolean
 }
 
 /* The signed-in home: a top bar, the two tabs, toasts and the walkthrough. Each tab is its own component. */
-export default function Tracker({ tab, tour = null }: TrackerProps) {
+export default function Tracker({ tab, tour = null, planOpen = false }: TrackerProps) {
   const [toast, setToast] = useState<Toast | null>(null)
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
@@ -95,7 +97,7 @@ export default function Tracker({ tab, tour = null }: TrackerProps) {
       </nav>
 
       <main className="tracker-main">
-        <WorkoutTab active={tab === 'workout'} notify={notify} />
+        <WorkoutTab active={tab === 'workout'} notify={notify} planOpen={planOpen} />
         <MealsTab active={tab === 'meals'} notify={notify} />
       </main>
 

@@ -9,6 +9,9 @@ using ruru_api.DTOs.Auth;
 using ruru_api.services.AuthService;
 using ruru_api.services.OnboardingService;
 using ruru_api.services.ExerciseService;
+using ruru_api.services.TrainingPlanService;
+using ruru_api.repositories.TrainingPlanRepository;
+using ruru_api.ai;
 using ruru_api.repositories.ExerciseRepository;
 using ruru_api.repositories.ProfileRepository;
 using ruru_api.services.WorkoutService;
@@ -93,6 +96,15 @@ builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IOnboardingService, OnboardingService>();
 builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
 builder.Services.AddScoped<IExerciseService, ExerciseService>();
+builder.Services.AddScoped<ITrainingPlanRepository, TrainingPlanRepository>();
+builder.Services.AddScoped<ITrainingPlanService, TrainingPlanService>();
+
+// AI training plans: Claude through Anthropic's Messages API. Needs Anthropic:ApiKey in user secrets.
+builder.Services.AddHttpClient<IPlanGenerator, AnthropicPlanGenerator>(client =>
+{
+    client.BaseAddress = new Uri("https://api.anthropic.com/");
+    client.Timeout = TimeSpan.FromMinutes(3);
+});
 
 // Unhandled exceptions become an ErrorResponse with a matching status code (see GlobalExceptionHandler).
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();

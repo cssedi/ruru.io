@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { EXERCISES, findExercise, fmt, uid } from '../../data'
 import type { Workout, WorkoutExercise, WorkoutSet } from '../../models/Workout'
+import type { IPlanDay } from '../../models/TrainingPlan'
+import { AiPlan } from './AiPlan'
 import { Picker } from './Picker'
 import type { TabProps } from './shared'
 
@@ -20,8 +22,19 @@ const initialWorkout: Workout = {
   ],
 }
 
-/** The Workout tab: logs one training session. Owns its own state. */
-export function WorkoutTab({ active, notify }: TabProps) {
+interface WorkoutTabProps extends TabProps {
+  /** Opens the AI plan on its readiness check (after answering a missing question). */
+  planOpen?: boolean
+}
+
+/** Starter-list exercises come from data.ts; exercises started from a plan carry their own name. */
+const describe = (ex: WorkoutExercise) => (ex.name ? { name: ex.name, group: ex.group ?? 'From your plan' } : findExercise(ex.exId))
+
+/** First number in a rep range like "8–10" or "30 s"; empty when there isn't one. */
+const firstNumber = (reps: string) => reps.match(/\d+/)?.[0] ?? ''
+
+/** The Workout tab: the optional AI plan, then the log for one training session. Owns its own state. */
+export function WorkoutTab({ active, notify, planOpen = false }: WorkoutTabProps) {
   const [workout, setWorkout] = useState<Workout>(initialWorkout)
   const [picking, setPicking] = useState(false)
   const done = workout.exercises.flatMap((e) => e.sets).filter((s) => s.done)
@@ -35,11 +48,29 @@ export function WorkoutTab({ active, notify }: TabProps) {
   function removeExercise(ex: WorkoutExercise) {
     const prev = workout
     setWorkout((w) => ({ ...w, exercises: w.exercises.filter((e) => e.key !== ex.key) }))
-    notify(`Removed ${findExercise(ex.exId).name}.`, () => setWorkout(prev))
+    notify(`Removed ${describe(ex).name}.`, () => setWorkout(prev))
+  }
+
+  function startFromPlan(day: IPlanDay) {
+    const prev = workout
+    setWorkout({
+      name: `${day.day}: ${day.name}`,
+      exercises: day.exercises.map((e) => ({
+        key: uid(),
+        exId: e.exerciseId,
+        name: e.name,
+        group: `Target ${e.reps}${e.intensity ? ` · ${e.intensity}` : ''}`,
+        sets: Array.from({ length: Math.max(1, e.sets) }, () => ({ key: uid(), kg: '', reps: firstNumber(e.reps), done: false })),
+      })),
+    })
+    notify(`Loaded ${day.name}. Fill in your weights as you go.`, () => setWorkout(prev))
+    document.getElementById('wname')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
     <section className="panel workout-panel" aria-labelledby="workout-h" hidden={!active}>
+      <AiPlan open={planOpen} notify={notify} onStart={startFromPlan} />
+
       <div className="panel-head">
         <h2 id="workout-h" className="panel-title">Workout</h2>
         <label className="sr-only" htmlFor="wname">Workout name</label>
@@ -62,7 +93,7 @@ export function WorkoutTab({ active, notify }: TabProps) {
       )}
 
       {workout.exercises.map((ex) => {
-        const meta = findExercise(ex.exId)
+        const meta = describe(ex)
         return (
           <article className="block" key={ex.key}>
             <header className="block-head">

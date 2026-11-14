@@ -8,7 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using ruru_api.ai;
 using ruru_api.data;
+using ruru_api.Tests.Fakes;
 using ruru_api.model;
 
 namespace ruru_api.Tests.Api;
@@ -30,6 +32,8 @@ public class RuruApiFactory : WebApplicationFactory<Program>
         Environment.SetEnvironmentVariable("Api__ExpireMinutes", "60");
     }
 
+    public FakePlanGenerator PlanGenerator { get; } = new();
+
     private readonly string _databaseName = $"ruru-tests-{Guid.NewGuid()}";
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -39,6 +43,10 @@ public class RuruApiFactory : WebApplicationFactory<Program>
             services.RemoveAll<DbContextOptions<RuruDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<RuruDbContext>>();
             services.AddDbContext<RuruDbContext>(options => options.UseInMemoryDatabase(_databaseName));
+
+            // Never call the real AI from tests.
+            services.RemoveAll<IPlanGenerator>();
+            services.AddSingleton<IPlanGenerator>(PlanGenerator);
         });
     }
 

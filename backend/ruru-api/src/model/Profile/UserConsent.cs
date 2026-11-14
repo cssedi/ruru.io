@@ -8,6 +8,9 @@ public class UserConsent
 {
     public const string HealthProfilePurpose = "HealthProfile";
 
+    /// <summary>Sending plan details to the AI provider (Anthropic, outside South Africa) to write a training plan.</summary>
+    public const string AiPlanPurpose = "AiPlanGeneration";
+
     public Guid Id { get; set; }
     public Guid UserId { get; set; }
     public User User { get; set; } = null!;

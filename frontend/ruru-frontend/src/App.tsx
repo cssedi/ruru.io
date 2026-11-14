@@ -10,7 +10,7 @@ interface Route {
   query: URLSearchParams
 }
 
-// Tiny hash router: #/ , #/login , #/signup , #/welcome , #/app?tab=meals&tour=meals
+// Tiny hash router: #/ , #/login , #/signup , #/welcome?edit=sleep&return=… , #/app?tab=meals&tour=meals , #/app?plan=1
 function parse(): Route {
   const raw = window.location.hash.replace(/^#/, '') || '/'
   const [path, qs = ''] = raw.split('?')
@@ -28,6 +28,11 @@ const TITLES: Record<string, string> = {
 function tourStart(value: string | null): 'workout' | 'meals' | null {
   if (value === 'meals') return 'meals'
   return value === 'workout' || value === '1' ? 'workout' : null
+}
+
+/** Only allow returning into the app itself, never to another site. */
+function safeReturn(value: string | null): string {
+  return value && value.startsWith('#/app') ? value : '#/app'
 }
 
 function Redirect({ to }: { to: string }) {
@@ -59,12 +64,17 @@ export default function App() {
       return <Auth key="signup" mode="signup" />
     case '/welcome':
       // Onboarding saves to the signed-in user's account, so it needs a token.
-      return getToken() ? <Onboarding /> : <Redirect to="#/login" />
+      return getToken() ? (
+        <Onboarding edit={route.query.get('edit')} returnTo={safeReturn(route.query.get('return'))} />
+      ) : (
+        <Redirect to="#/login" />
+      )
     case '/app':
       return (
         <Tracker
           tab={route.query.get('tab') === 'meals' ? 'meals' : 'workout'}
           tour={tourStart(route.query.get('tour'))}
+          planOpen={route.query.get('plan') === '1'}
         />
       )
     default:

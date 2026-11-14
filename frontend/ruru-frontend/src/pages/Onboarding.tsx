@@ -41,7 +41,15 @@ const SWIPE_PX = 60
   feedback (BMI, age checks) and persist across steps; each finished section is
   saved to the API so the user can leave and pick up where they left off.
 */
-export default function Onboarding() {
+interface OnboardingProps {
+  /** Answer just this question (its key), then go back to `returnTo`. Used by the AI plan's gap links. */
+  edit?: string | null
+  returnTo?: string
+}
+
+export default function Onboarding({ edit = null, returnTo = '#/app' }: OnboardingProps) {
+  const editIndex = edit ? STEPS.findIndex((s) => s.question.key === edit) : -1
+  const editing = editIndex !== -1
   const [phase, setPhase] = useState<Phase>('loading')
   const [answers, setAnswers] = useState<IOnboardingAnswers>(EMPTY_ANSWERS)
   // Multi-choice questions answered with "None of these" (stored as an empty list).
@@ -53,21 +61,22 @@ export default function Onboarding() {
   useEffect(() => {
     GetOnboardingStatus()
       .then((status) => {
-        if (status.isComplete) {
+        if (status.isComplete && editIndex === -1) {
           window.location.replace('#/app')
           return
         }
         const saved = { ...EMPTY_ANSWERS, ...status.answers }
         const firstOpen = STEPS.findIndex((s) => !isAnswered(s.question, saved, new Set()))
         setAnswers(saved)
-        setStep(firstOpen === -1 ? STEPS.length - 1 : firstOpen)
+        if (editIndex !== -1) setStep(editIndex)
+        else setStep(firstOpen === -1 ? STEPS.length - 1 : firstOpen)
         setPhase(status.hasConsent ? 'questions' : 'consent')
       })
       .catch((err: unknown) => {
         if (err instanceof ApiError && err.status === 401) return signOut()
         setPhase('failed')
       })
-  }, [])
+  }, [editIndex])
 
   /** Runs an API call with a busy state and an inline error message. */
   async function run(task: () => Promise<void>) {
@@ -89,8 +98,13 @@ export default function Onboarding() {
       setPhase('questions')
     })
 
+  const leaveEdit = () => {
+    window.location.hash = returnTo
+  }
+
   const notNow = () =>
     run(async () => {
+      if (editing) return leaveEdit()
       await SkipOnboarding()
       window.location.hash = tourRoute()
     })
@@ -98,6 +112,10 @@ export default function Onboarding() {
   /** Moves forward one question, saving at the end of each section and finishing at the end. */
   const advance = () =>
     run(async () => {
+      if (editing) {
+        await SaveOnboardingAnswers(answers)
+        return leaveEdit()
+      }
       const current = STEPS[step]
       const next = STEPS[step + 1]
       const endOfSection = !next || next.sectionIndex !== current.sectionIndex
@@ -115,6 +133,7 @@ export default function Onboarding() {
     })
 
   const back = () => {
+    if (editing) return leaveEdit()
     setError(null)
     setStep((s) => Math.max(0, s - 1))
   }
@@ -170,10 +189,10 @@ export default function Onboarding() {
         indexInSection={indexInSection}
         step={step}
         title={section.title}
-        onBack={step > 0 ? back : undefined}
+        onBack={editing || step > 0 ? back : undefined}
       />
 
-      <Swipe onNext={canContinue ? () => void advance() : undefined} onBack={step > 0 ? back : undefined}>
+      <Swipe onNext={canContinue ? () => void advance() : undefined} onBack={editing || step > 0 ? back : undefined}>
         <form className="story" onSubmit={submit} noValidate aria-labelledby="story-q">
           {/* Remounting per question resets local input state and replays the slide-in. */}
           <div className="story-body" key={step}>
@@ -214,10 +233,10 @@ export default function Onboarding() {
 
           <div className="story-actions">
             <button className="btn btn-primary btn-block" type="submit" disabled={!canContinue}>
-              {busy ? 'Saving…' : isLast ? 'Finish' : 'Next'}
+              {busy ? 'Saving…' : editing ? 'Save' : isLast ? 'Finish' : 'Next'}
             </button>
             {!question.required && (
-              <button type="button" className="btn btn-ghost btn-block" disabled={busy} onClick={() => void advance()}>
+              <button type="button" className="btn btn-ghost btn-block" disabled={busy} onClick={editing ? leaveEdit : () => void advance()}>
                 Skip
               </button>
             )}
