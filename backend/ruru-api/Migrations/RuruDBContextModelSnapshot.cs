@@ -177,6 +177,26 @@ namespace ruru_api.Migrations
                     b.Property<string>("Asset")
                         .HasColumnType("text");
 
+                    b.Property<string>("Equipment")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("EquipmentGroup")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
                     b.PrimitiveCollection<string[]>("PrimaryMuscleGroup")
                         .IsRequired()
                         .HasColumnType("text[]");
@@ -184,7 +204,15 @@ namespace ruru_api.Migrations
                     b.PrimitiveCollection<string[]>("SecondaryMuscleGroup")
                         .HasColumnType("text[]");
 
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Exercise");
                 });

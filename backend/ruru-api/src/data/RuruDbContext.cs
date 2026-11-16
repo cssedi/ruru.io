@@ -59,6 +59,16 @@ namespace ruru_api.data
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
+            modelBuilder.Entity<Exercise>(entity =>
+            {
+                entity.Property(e => e.Name).HasMaxLength(120);
+                entity.HasIndex(e => e.Name).IsUnique();
+                entity.Property(e => e.Equipment).HasMaxLength(64);
+                entity.Property(e => e.Type).HasConversion<string>().HasMaxLength(32);
+                entity.Property(e => e.EquipmentGroup).HasConversion<string>().HasMaxLength(32);
+                entity.Property(e => e.Level).HasConversion<string>().HasMaxLength(32);
+            });
+
             modelBuilder.Entity<Workout>(entity =>
             {
                 entity.HasKey(w => w.Id);

@@ -1,0 +1,4002 @@
+[
+  {
+    "name": "Bench dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Feet-elevated bench dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kneeling Forearm Stretch",
+    "type": "Stretching",
+    "bodyPart": "Forearms",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Parallel Bar Dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Push-Ups - Close Triceps Position",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Ring dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing Towel Triceps Extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Tricep Side Stretch",
+    "type": "Stretching",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Triceps dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Weighted bench dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Back extension",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Burpee to pull-up",
+    "type": "Plyometrics",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cat Stretch",
+    "type": "Stretching",
+    "bodyPart": "Lower Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Chin-Up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dancer's Stretch",
+    "type": "Stretching",
+    "bodyPart": "Lower Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Dynamic Back Stretch",
+    "type": "Stretching",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Hyperextensions With No Hyperextension Bench",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Iron cross stretch",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Jump to pull-up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Mixed Grip Chin",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Negative pull-up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Neutral-grip pull-up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Pullups",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Rope climb",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Scapular Pull-Up",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Spinal Stretch",
+    "type": "Stretching",
+    "bodyPart": "Middle Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Superman",
+    "type": "Stretching",
+    "bodyPart": "Lower Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Weighted back extension",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Wide-Grip Rear Pull-Up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Chest dip",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dip Bars",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Clapping Push-Up",
+    "type": "Plyometrics",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Clock push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Close push-up to wide push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Close-Hands Push-Up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Close-grip hands-elevated push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline Push-Up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Feet-elevated push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Hands-elevated push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Incline Push-Up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline Push-Up Depth Jump",
+    "type": "Plyometrics",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Plyo push-up",
+    "type": "Plyometrics",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Push-Up Wide",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Pushups",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-Arm Push-Up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Sphinx push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Tiger-bend push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Wide-grip hands-elevated push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "3/4 sit-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Ab bicycle",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Ab wheel roll-out",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bear crawl push-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bench mountain climber",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bench oblique crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bent-knee reverse crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bird dog",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Butterfly crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Captain's chair knee raise",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Captain's Chair",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Chin-up crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cocoon crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cross-Body Crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Crunch - Hands Overhead",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Crunches",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dead bug reach",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline Crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline oblique crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Elbow plank",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Elbow-to-knee crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Feet-elevated oblique crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Flat Bench Lying Leg Raise",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Gorilla Chin/Crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Hanging Oblique Knee Raise",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Hanging leg raise",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Janda Sit-Up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Knees tucked crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying bench reverse crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying oblique crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Mountain climber",
+    "type": "Plyometrics",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Reverse crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Russian twist",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Sit-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Suspended Reverse Crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "V-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "90-degree jump squat",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "All Fours Quad Stretch",
+    "type": "Stretching",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Alternating lunge jump",
+    "type": "Stretching",
+    "bodyPart": "Hamstrings",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Arms-crossed jump squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bear crawl donkey kick",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bodyweight Reverse Lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bodyweight Walking Lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bodyweight squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bouncing lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Burpee",
+    "type": "Cardio",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Burpee box jump",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Burpee tuck jump",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Curtsy lunge",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Depth jump box jump",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dynamic pigeon stretch",
+    "type": "Strength",
+    "bodyPart": "Abductors",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Fire Hydrant",
+    "type": "Strength",
+    "bodyPart": "Abductors",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Forward lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Glute bridge",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Groin and Back Stretch",
+    "type": "Stretching",
+    "bodyPart": "Adductors",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "High knees",
+    "type": "Cardio",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "High knees sprawl drill",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "In-out jump squat",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Iron Crosses (stretch)",
+    "type": "Stretching",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Jump Squat",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Jump lunge heel kick",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Jumping jack",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kneeling hip flexor stretch",
+    "type": "Stretching",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kneeling quad thoracic stretch",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lateral lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Leg-Up Hamstring Stretch",
+    "type": "Stretching",
+    "bodyPart": "Hamstrings",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lunge high-knee clap",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lunge kick",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying glute stretch",
+    "type": "Stretching",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Pigeon stretch",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Push-up sprawl tuck jump",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Running lunge",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Side Leg Raises",
+    "type": "Stretching",
+    "bodyPart": "Adductors",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Single-leg burpee",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-leg glute bridge",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Spider lunge stretch",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Sprinter burpee",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Squat Isometric Hold",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Advanced"
+  },
+  {
+    "name": "Standing Gastrocnemius Calf Stretch",
+    "type": "Stretching",
+    "bodyPart": "Calves",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing quad stretch",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Step-up with knee raise",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Walking lunge",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Wall calf stretch",
+    "type": "Stretching",
+    "bodyPart": "Calves",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Wall sit",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "World's greatest stretch",
+    "type": "Stretching",
+    "bodyPart": "Hamstrings",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cross-body shoulder stretch",
+    "type": "Stretching",
+    "bodyPart": "Shoulders",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Handstand push-up",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Isometric Neck Exercise - Front And Back",
+    "type": "Strength",
+    "bodyPart": "Neck",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Isometric Neck Exercise - Sides",
+    "type": "Strength",
+    "bodyPart": "Neck",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Kipping Clapping Pull-Up",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kneeling Arm Drill",
+    "type": "Plyometrics",
+    "bodyPart": "Shoulders",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Neck Bridge Prone",
+    "type": "Strength",
+    "bodyPart": "Neck",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Beginner"
+  },
+  {
+    "name": "Shoulder extension stretch",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Upward Stretch",
+    "type": "Stretching",
+    "bodyPart": "Shoulders",
+    "equipment": "Body Only",
+    "equipmentGroup": "Bodyweight",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Alternate Hammer Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Alternate Incline Dumbbell Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Alternating incline dumbbell biceps curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Behind-the-head skullcrusher",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Close-grip EZ-bar curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Close-grip barbell curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Concentration curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cross-body hammer curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Decline Dumbbell Triceps Extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Decline EZ-bar skullcrusher",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "E-Z Curl Bar",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell Alternate Bicep Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell Bicep Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell farmer's walk",
+    "type": "Strongman",
+    "bodyPart": "Forearms",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell preacher curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell skullcrusher",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "EZ-Bar Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "E-Z Curl Bar",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "EZ-Bar Skullcrusher",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "E-Z Curl Bar",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Flexor Incline Dumbbell Curls",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Hammer Curls",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline EZ-bar skullcrusher",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline Hammer Curls",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Lying Supine Dumbbell Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Palms-out incline biceps curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Preacher Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Preacher Hammer Dumbbell Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Reverse Barbell Preacher Curls",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "E-Z Curl Bar",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Reverse-grip barbell curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated Close-Grip Concentration Barbell Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Seated dumbbell biceps curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm dumbbell preacher curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm dumbbell triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing Dumbbell Triceps Extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing barbell overhead triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing concentration curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Wide-grip barbell curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Alternating Kettlebell Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell behind-the-back shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell bent-over row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell deficit deadlift",
+    "type": "Powerlifting",
+    "bodyPart": "Lower Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Barbell good morning",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell seal row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bent Over Barbell Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bent Over Two-Dumbbell Row With Palms In",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Clean Shrug",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Traps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Deadlift with Bands",
+    "type": "Powerlifting",
+    "bodyPart": "Lower Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Dumbbell bent-over row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell kickstand deadlift",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell renegade row",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell seal row",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell stiff-legged deadlift",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline dumbbell row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell alternating renegade row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell sumo deadlift high pull",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Middle Back Shrug",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "One-Arm Dumbbell Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "One-Arm Long Bar Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Pendlay Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Reverse-grip bent-over row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated Good Mornings",
+    "type": "Powerlifting",
+    "bodyPart": "Lower Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Snatch Shrug",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Traps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Standing dumbbell shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing dumbbell upright row",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Stiff Leg Barbell Good Morning",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Straight Bar Bench Mid Rows",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Two-Arm Kettlebell Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Yates Row Reverse Grip",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Barbell Bench Press - Medium Grip",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Bench Press-Wide Grip",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Barbell Incline Bench Press Medium-Grip",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bent-arm dumbbell pull-over",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bodyweight Flyes",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "E-Z Curl Bar",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Close-grip bench press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline Dumbbell Flyes",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline barbell bench press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline dumbbell fly and press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell Bench Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell Flyes",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell chest fly",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell push-up row",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Front Raise And Pullover",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Incline Dumbbell Flyes",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline Dumbbell Flyes - With A Twist",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Incline dumbbell bench press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline dumbbell chest fly",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline dumbbell fly and press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell alternating floor press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Kettlebell plyo push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Neck Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Plate-weighted push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Weight Plate",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm kettlebell row",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-dumbbell push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Straight-arm dumbbell pull-over",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Wide-Grip Decline Barbell Pullover",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Wide-grip bench press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Barbell press sit-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell roll-out",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bench barbell roll-out",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Burpee over kettlebell",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline bar press sit-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline plate sit-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline plate sit-up twist",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Weight Plate",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Double Kettlebell Swing",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell Get-Up Sit-Up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Advanced"
+  },
+  {
+    "name": "Dumbbell crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell hollow-body floor press",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell spell caster",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Dumbbell suitcase crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell 3-point leg extension",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell swing",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Landmine twist",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying Leg Pullover",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm dumbbell crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing dumbbell knee crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Bulgarian split squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Hip Thrust",
+    "type": "Powerlifting",
+    "bodyPart": "Glutes",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell back squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell back squat to box",
+    "type": "Powerlifting",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell forward lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Advanced"
+  },
+  {
+    "name": "Barbell front squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell glute bridge",
+    "type": "Powerlifting",
+    "bodyPart": "Glutes",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell hack squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Advanced"
+  },
+  {
+    "name": "Barbell step-up",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell stiff-legged deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell thruster",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell walking lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Box Squat with Bands",
+    "type": "Powerlifting",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Clean",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Clean Deadlift",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Clean from Blocks",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Dumbbell Lunges",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell reverse lunge",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell seated box jump",
+    "type": "Plyometrics",
+    "bodyPart": "Quadriceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell step-up",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Front Squats With Two Kettlebells",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Goblet Squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Good Morning",
+    "type": "Powerlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Hack Squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Hang Clean",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Hang Snatch",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Jerk Dip Squat",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Kettlebell One-Legged Deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell pass-through lunge",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kettlebell thruster",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Power Clean from Blocks",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Power Snatch",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Power clean",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Rocking Standing Calf Raise",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Romanian Deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Romanian Deadlift With Dumbbells",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Romanian Deadlift from Deficit",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Single-arm kettlebell clean",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Single-leg kettlebell deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Snatch Deadlift",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Split Squat with Dumbbells",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing barbell calf raise",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Stiff-Legged Dumbbell Deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Sumo deadlift",
+    "type": "Powerlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Weighted Jump Squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Alternating dumbbell front raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Alternating standing shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Arnold press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell Shoulder Press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell rear delt bent-over row",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Barbell upright row",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bent-over dumbbell rear delt row",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Clean and jerk",
+    "type": "OlympicWeightlifting",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Clean and press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell front raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dumbbell front raise to lateral raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline dumbbell front raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline dumbbell reverse fly",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying rear delt fly",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Military press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Overhead dumbbell front raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated Side Lateral Raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated barbell shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated rear delt fly",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Side Lateral Raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm incline lateral raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm kettlebell snatch",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm lateral raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-dumbbell front raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Snatch-Grip Behind-The-Neck Overhead Press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Barbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Standing dumbbell shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing palms-in shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Dumbbell",
+    "equipmentGroup": "FreeWeights",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Two-Arm Kettlebell Military Press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Kettlebells",
+    "equipmentGroup": "FreeWeights",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable V-bar push-down",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable Wrist Curl",
+    "type": "Strength",
+    "bodyPart": "Forearms",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable overhead triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable rope hammer curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Dip Machine",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kneeling cable triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying cable biceps curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Lying cable triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine Bicep Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Machine Preacher Curls",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Overhead cable curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Reverse Cable Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Reverse Grip Triceps Pushdown",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm cable triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing Biceps Cable Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing One-Arm Cable Curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Triceps Pushdown",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable stiff-legged deadlift",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable straight-bar upright row",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Calf-Machine Shoulder Shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Close-Grip Front Lat Pulldown",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Elevated Cable Rows",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "High-cable standing row",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lat pull-down",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Leverage High Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Leverage Shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine Low Row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine seated row",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Machine-assisted pull-up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Reverse-grip lat pull-down",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated Back Extension",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Seated Cable Rows",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Shotgun row",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm cable seated row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm kneeling lat pull-down",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Smith machine behind-the-back shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine bent-over row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine inverted row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine shrug",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine upright row",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bar Push-Up Smith Machine",
+    "type": "Plyometrics",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable Chest Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable Crossover",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline cable chest fly",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Incline cable chest press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Leverage Chest Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Low-cable cross-over",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying cable chest fly",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine bench press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine chest fly",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine chest press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm cable cross-over",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith Machine Close-Grip Bench Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith Machine Decline Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Smith Machine Incline Bench Press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine bench press",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Ab Crunch Machine",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable Russian Twists",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable reverse crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Kneeling cable crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Kneeling cable oblique crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Pallof press with rotation",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Rope Crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm high-cable side bend",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing Cable Wood Chop",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing cable crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing cable low-to-high twist",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable Deadlifts",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable Hip Adduction",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable rope pull-through deadlift",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Calf Press On The Leg Press Machine",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Leg Extensions",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Leg Press",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Leg curl",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Leverage Deadlift",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Lying Leg Curls",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Narrow-stance leg press",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Reverse Hyperextension",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Seated Calf Raise",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated Leg Curl",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated Leg Press",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-Leg Press",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-leg cable hip extension",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-leg leg extension",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith Machine Calf Raise",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith Machine Reverse Calf Raises",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Smith machine back squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine box squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine front squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine leg press",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine pistol squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine stiff-legged deadlift",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Standing Calf Raises",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Standing Leg Curl",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Thigh abductor",
+    "type": "Strength",
+    "bodyPart": "Abductors",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Thigh adductor",
+    "type": "Strength",
+    "bodyPart": "Adductors",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Cable Internal Rotation",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Cable Shoulder Press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Beginner"
+  },
+  {
+    "name": "Machine Lateral Raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Machine shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Reverse Machine Flyes",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated cable shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Seated face pull",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm bent-over cable rear delt fly",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Single-arm cable front raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Smith machine shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Machine",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing cable rear delt row",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing crossed-cable rear delt fly",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing face pull",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Cable",
+    "equipmentGroup": "Machines",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band overhead triceps extension",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band skullcrusher",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band standing concentration curl",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Banded biceps curl in squat position",
+    "type": "Strength",
+    "bodyPart": "Biceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Banded dip",
+    "type": "Strength",
+    "bodyPart": "Triceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Brachialis SMR",
+    "type": "Stretching",
+    "bodyPart": "Biceps",
+    "equipment": "Foam Roll",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Standing alternating band speed row",
+    "type": "Strength",
+    "bodyPart": "Forearms",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Supine Chest Throw",
+    "type": "Plyometrics",
+    "bodyPart": "Triceps",
+    "equipment": "Medicine Ball",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Assisted Chin-Up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Band bent-over row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band deadlift",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band good morning",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band-assisted pull-up",
+    "type": "Strength",
+    "bodyPart": "Lats",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Exercise ball weighted hyperextension",
+    "type": "Strength",
+    "bodyPart": "Lower Back",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Medicine ball slam",
+    "type": "Plyometrics",
+    "bodyPart": "Lats",
+    "equipment": "Medicine Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Suspended row",
+    "type": "Strength",
+    "bodyPart": "Middle Back",
+    "equipment": "Suspension Trainer",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Upright Row - With Bands",
+    "type": "Strength",
+    "bodyPart": "Traps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Band chest fly",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Bench Press - With Bands",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Exercise ball chest stretch",
+    "type": "Stretching",
+    "bodyPart": "Chest",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Feet-Elevated TRX Push-Up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Feet-elevated push-up on ball",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Medicine ball push-up",
+    "type": "Strength",
+    "bodyPart": "Chest",
+    "equipment": "Medicine Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Pass-through stretch with band",
+    "type": "Stretching",
+    "bodyPart": "Chest",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Ab Roller",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Ab Wheel",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Banded crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Banded crunch isometric hold",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Banded jumping jack",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Decline band press sit-up",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Exercise ball crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Exercise ball superman",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Feet-elevated crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Hollow-hold ball toss",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Medicine Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Suspended crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Suspension Trainer",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Suspended oblique crunch",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Suspension Trainer",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Weighted Sit-Ups - With Bands",
+    "type": "Strength",
+    "bodyPart": "Abdominals",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band Good Morning (Pull Through)",
+    "type": "Powerlifting",
+    "bodyPart": "Hamstrings",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Band Hip Adductions",
+    "type": "Strength",
+    "bodyPart": "Adductors",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Banded jump squat",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Calf Raises - With Bands",
+    "type": "Strength",
+    "bodyPart": "Calves",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Exercise ball hip thrust",
+    "type": "Strength",
+    "bodyPart": "Glutes",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Exercise ball leg curl",
+    "type": "Strength",
+    "bodyPart": "Hamstrings",
+    "equipment": "Exercise Ball",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "IT Band and Glute Stretch",
+    "type": "Stretching",
+    "bodyPart": "Abductors",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying groin stretch with band",
+    "type": "Stretching",
+    "bodyPart": "Hamstrings",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lying hamstring stretch with band",
+    "type": "Stretching",
+    "bodyPart": "Hamstrings",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Lying quad stretch with band",
+    "type": "Stretching",
+    "bodyPart": "Quadriceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Peroneals Stretch",
+    "type": "Stretching",
+    "bodyPart": "Calves",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Squats - With Bands",
+    "type": "Strength",
+    "bodyPart": "Quadriceps",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Standing Hamstring and Calf Stretch",
+    "type": "Stretching",
+    "bodyPart": "Hamstrings",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Back Flyes - With Bands",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Band lateral raise",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Band upright row",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Battle ropes",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Rope",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lateral Raise - With Bands",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Shoulder Press - With Bands",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Beginner"
+  },
+  {
+    "name": "Staggered-stance band shoulder press",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Bands",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  },
+  {
+    "name": "Standing suspended rear delt fly",
+    "type": "Strength",
+    "bodyPart": "Shoulders",
+    "equipment": "Suspension Trainer",
+    "equipmentGroup": "Portable",
+    "level": "Intermediate"
+  }
+]

@@ -79,6 +79,7 @@ Vite forwards requests on `/api` to the API at `http://localhost:5266` (see `vit
 | `POST` | `/api/Auth/login` | Sign in and receive a token |
 | `GET` | `/api/Workout/GetWorkouts/{userId}` | List a user's workouts |
 | `POST` | `/api/Workout/CreateWorkout` | Create a workout |
+| `GET` | `/api/Exercise` | The exercise catalogue; optional `equipmentGroup` and `search` filters |
 | `GET` | `/api/Onboarding` | The signed-in user's consent status, onboarding status and answers |
 | `PUT` | `/api/Onboarding` | Save answers (replaces all of them; needs consent) |
 | `POST` | `/api/Onboarding/complete` | Check the required answers and finish onboarding |
