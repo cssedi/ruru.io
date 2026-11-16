@@ -16,6 +16,7 @@ namespace ruru_api.data
         public DbSet<WorkoutExercise> WorkoutExercise { get; set;}
         public DbSet<UserProfile> UserProfile { get; set; }
         public DbSet<UserConsent> UserConsent { get; set; }
+        public DbSet<TrainingPlan> TrainingPlan { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -45,6 +46,22 @@ namespace ruru_api.data
                 entity.Property(p => p.GoalWeight).HasPrecision(5, 1);
             });
 
+            modelBuilder.Entity<TrainingPlan>(entity =>
+            {
+                entity.ToTable("TrainingPlan");
+                entity.HasKey(p => p.Id);
+                entity.Property(p => p.Status).HasConversion<string>().HasMaxLength(16);
+                entity.Property(p => p.Title).HasMaxLength(200);
+                entity.Property(p => p.Model).HasMaxLength(64);
+                entity.Property(p => p.Content).HasColumnType("jsonb");
+                entity.HasIndex(p => new { p.UserId, p.Status });
+
+                entity.HasOne(p => p.User)
+                    .WithMany()
+                    .HasForeignKey(p => p.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
             modelBuilder.Entity<UserConsent>(entity =>
             {
                 entity.ToTable("UserConsent");
@@ -57,6 +74,16 @@ namespace ruru_api.data
                     .WithMany()
                     .HasForeignKey(c => c.UserId)
                     .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<Exercise>(entity =>
+            {
+                entity.Property(e => e.Name).HasMaxLength(120);
+                entity.HasIndex(e => e.Name).IsUnique();
+                entity.Property(e => e.Equipment).HasMaxLength(64);
+                entity.Property(e => e.Type).HasConversion<string>().HasMaxLength(32);
+                entity.Property(e => e.EquipmentGroup).HasConversion<string>().HasMaxLength(32);
+                entity.Property(e => e.Level).HasConversion<string>().HasMaxLength(32);
             });
 
             modelBuilder.Entity<Workout>(entity =>

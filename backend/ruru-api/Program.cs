@@ -8,6 +8,11 @@ using ruru_api.common;
 using ruru_api.DTOs.Auth;
 using ruru_api.services.AuthService;
 using ruru_api.services.OnboardingService;
+using ruru_api.services.ExerciseService;
+using ruru_api.services.TrainingPlanService;
+using ruru_api.repositories.TrainingPlanRepository;
+using ruru_api.ai;
+using ruru_api.repositories.ExerciseRepository;
 using ruru_api.repositories.ProfileRepository;
 using ruru_api.services.WorkoutService;
 using ruru_api.data;
@@ -89,6 +94,17 @@ builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IOnboardingService, OnboardingService>();
+builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
+builder.Services.AddScoped<IExerciseService, ExerciseService>();
+builder.Services.AddScoped<ITrainingPlanRepository, TrainingPlanRepository>();
+builder.Services.AddScoped<ITrainingPlanService, TrainingPlanService>();
+
+// AI training plans: Claude through Anthropic's Messages API. Needs Anthropic:ApiKey in user secrets.
+builder.Services.AddHttpClient<IPlanGenerator, AnthropicPlanGenerator>(client =>
+{
+    client.BaseAddress = new Uri("https://api.anthropic.com/");
+    client.Timeout = TimeSpan.FromMinutes(3);
+});
 
 // Unhandled exceptions become an ErrorResponse with a matching status code (see GlobalExceptionHandler).
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
@@ -110,6 +126,25 @@ using (var scope = app.Services.CreateScope())
         {
             await roleManager.CreateAsync(new IdentityRole<Guid>(roleName));
         }
+    }
+}
+
+// Add any starter exercises that aren't in the database yet (safe to run on every startup).
+using (var scope = app.Services.CreateScope())
+{
+    var exerciseService = scope.ServiceProvider.GetRequiredService<IExerciseService>();
+    try
+    {
+        var seeded = await exerciseService.SeedAsync();
+        if (seeded.Value > 0)
+        {
+            app.Logger.LogInformation("Added {Count} starter exercises.", seeded.Value);
+        }
+    }
+    catch (Exception exception)
+    {
+        // Don't stop the API from starting; the usual cause is a migration that hasn't been applied.
+        app.Logger.LogError(exception, "Couldn't seed the starter exercises. Run 'dotnet ef database update' and restart.");
     }
 }
 

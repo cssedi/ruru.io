@@ -16,7 +16,11 @@ export interface WorkoutSet {
 
 export interface WorkoutExercise {
   key: string
+  /** A starter-list id (data.ts) or, for sessions started from a plan, a catalogue exercise id. */
   exId: string
+  /** Set for catalogue exercises, which aren't in the starter list. */
+  name?: string
+  group?: string
   sets: WorkoutSet[]
 }
 

@@ -5,12 +5,14 @@ export interface WalkthroughStep {
   target: string
   title: string
   body: string
-  /** On narrow screens only one tracker tab shows at a time; switch to this one first. */
+  /** Only one tracker tab shows at a time; switch to this one first. */
   tab?: 'workout' | 'meals'
 }
 
 interface WalkthroughProps {
   steps: WalkthroughStep[]
+  /** The tab on screen now, so a step is measured again once its tab has appeared. */
+  activeTab: 'workout' | 'meals'
   /** Called with a step's tab so the page can show it before the step is measured. */
   onTab: (tab: 'workout' | 'meals') => void
   onDone: () => void
@@ -22,7 +24,7 @@ const PAD = 8
   A short, one-time tour after onboarding: a spotlight ring around one part of the
   page and a card at the bottom explaining it. Escape or "Skip tour" ends it.
 */
-export function Walkthrough({ steps, onTab, onDone }: WalkthroughProps) {
+export function Walkthrough({ steps, activeTab, onTab, onDone }: WalkthroughProps) {
   const [index, setIndex] = useState(0)
   const [rect, setRect] = useState<DOMRect | null>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
@@ -33,7 +35,7 @@ export function Walkthrough({ steps, onTab, onDone }: WalkthroughProps) {
     if (step.tab) onTab(step.tab)
     const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
     let target: Element | null = null
-    // A hidden element (e.g. the other tab on a phone) measures 0×0: dim the page instead.
+    // A hidden element (the other tab) measures 0×0: dim the page until its tab shows.
     const measure = () => {
       const r = target?.getBoundingClientRect()
       setRect(r && r.width > 0 ? r : null)
@@ -52,7 +54,7 @@ export function Walkthrough({ steps, onTab, onDone }: WalkthroughProps) {
       window.removeEventListener('resize', measure)
       window.removeEventListener('scroll', measure, true)
     }
-  }, [step, onTab])
+  }, [step, activeTab, onTab])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onDone()

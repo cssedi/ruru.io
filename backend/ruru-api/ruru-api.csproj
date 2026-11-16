@@ -22,6 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Starter exercise catalogue, read by ExerciseSeedData. -->
+    <Content Remove="src\data\Seed\exercises.json" />
+    <EmbeddedResource Include="src\data\Seed\exercises.json" LogicalName="exercises.json" />
+    <!-- The fitness-program skill: AnthropicPlanGenerator's instructions. -->
+    <Content Remove="src\ai\skills\**\*.md" />
+    <None Remove="src\ai\skills\**\*.md" />
+    <EmbeddedResource Include="src\ai\skills\fitness-program\*.md" LogicalName="skills/fitness-program/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="src\DTOs\Enums\" />
     <Folder Include="src\services\IAuthService\" />
   </ItemGroup>
