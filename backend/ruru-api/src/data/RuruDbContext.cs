@@ -39,7 +39,6 @@ namespace ruru_api.data
                 entity.Property(p => p.Sleep).HasConversion<string>().HasMaxLength(32);
                 entity.Property(p => p.TrainingLocation).HasConversion<string>().HasMaxLength(32);
                 entity.Property(p => p.Diet).HasConversion<string>().HasMaxLength(32);
-                entity.Property(p => p.StartWith).HasConversion<string>().HasMaxLength(32);
 
                 entity.Property(p => p.Height).HasPrecision(5, 1);
                 entity.Property(p => p.CurrentWeight).HasPrecision(5, 1);

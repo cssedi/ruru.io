@@ -38,9 +38,6 @@ public class UserProfile
     public DietType? Diet { get; set; }
     public string[] ExcludedFoods { get; set; } = [];
 
-    // Getting started
-    public StartSection? StartWith { get; set; }
-
     /// <summary>Set when the user finishes or skips onboarding, so it isn't shown again.</summary>
     public DateTime? OnboardingCompletedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
@@ -66,6 +63,5 @@ public class UserProfile
         FocusAreas = [];
         Diet = null;
         ExcludedFoods = [];
-        StartWith = null;
     }
 }
