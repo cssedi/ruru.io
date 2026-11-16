@@ -43,6 +43,7 @@ export interface IOnboardingAnswers {
   focusAreas: FocusArea[]
   diet: DietType | null
   excludedFoods: ExcludedFood[]
+  /** Frontend only: picks where the walkthrough starts. The API ignores it. */
   startWith: StartSection | null
 }
 
