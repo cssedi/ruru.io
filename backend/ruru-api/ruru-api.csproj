@@ -22,6 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Starter exercise catalogue, read by ExerciseSeedData. -->
+    <Content Remove="src\data\Seed\exercises.json" />
+    <EmbeddedResource Include="src\data\Seed\exercises.json" LogicalName="exercises.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="src\DTOs\Enums\" />
     <Folder Include="src\services\IAuthService\" />
   </ItemGroup>

@@ -10,7 +10,7 @@ interface Route {
   query: URLSearchParams
 }
 
-// Tiny hash router: #/ , #/login , #/signup , #/welcome , #/app?tab=meals&tour=1
+// Tiny hash router: #/ , #/login , #/signup , #/welcome , #/app?tab=meals&tour=meals
 function parse(): Route {
   const raw = window.location.hash.replace(/^#/, '') || '/'
   const [path, qs = ''] = raw.split('?')
@@ -22,6 +22,12 @@ const TITLES: Record<string, string> = {
   '/signup': 'Create account',
   '/welcome': 'Set up your plan',
   '/app': 'Today',
+}
+
+/** `tour=workout` or `tour=meals` runs the walkthrough starting on that tab (`tour=1` is the old form). */
+function tourStart(value: string | null): 'workout' | 'meals' | null {
+  if (value === 'meals') return 'meals'
+  return value === 'workout' || value === '1' ? 'workout' : null
 }
 
 function Redirect({ to }: { to: string }) {
@@ -58,7 +64,7 @@ export default function App() {
       return (
         <Tracker
           tab={route.query.get('tab') === 'meals' ? 'meals' : 'workout'}
-          tour={route.query.get('tour') === '1'}
+          tour={tourStart(route.query.get('tour'))}
         />
       )
     default:
